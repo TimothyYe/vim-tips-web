@@ -1,11 +1,20 @@
 package main
 
 import (
-	github.com/go-martini/martini
-	fmt
-	net/http
+	//"fmt"
+	"github.com/go-martini/martini"
+	//"net/http"
 )
 
-func main() {
+var (
+	m = martini.Classic()
+)
+
+func Hello() string {
+	return "Hello Server!"
 }
 
+func main() {
+	m.Get("/", Hello)
+	m.Run()
+}
