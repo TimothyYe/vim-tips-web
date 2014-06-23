@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
+	"github.com/timothyye/vim-tips-web/routers"
 	"net/http"
 )
 
@@ -11,7 +13,11 @@ var (
 )
 
 func initEnv() {
+	m.Use(render.Renderer(render.Options{
+		Layout: "layout",
+	}))
 
+	routers.InitRouters()
 }
 
 func Hello() string {
@@ -23,7 +29,10 @@ func main() {
 
 	m.Get("/", Hello)
 	http.Handle("/", m)
-
-	http.ListenAndServe("3000", nil)
 	fmt.Println("Server started...")
+
+	err := http.ListenAndServe("127.0.0.1:3001", nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
