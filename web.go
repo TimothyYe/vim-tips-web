@@ -14,14 +14,16 @@ var (
 
 func initEnv() {
 	m.Use(render.Renderer(render.Options{
-		Layout: "layout",
+		Directory:  "templates",
+		Extensions: []string{".tpl", ".html"},
+		Charset:    "UTF-8",
 	}))
 
 	routers.InitRouters()
 }
 
-func Hello() string {
-	return "Hello Server!"
+func Hello(r render.Render) {
+	r.HTML(200, "hello", "Timothy")
 }
 
 func main() {
