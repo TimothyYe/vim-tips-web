@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +11,10 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-<!--   <link href="../static/css/style.css" rel="stylesheet">
--->  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 
 <!-- Custom styles for this template -->
 <!--   <link href="theme.css" rel="stylesheet"> -->
@@ -22,42 +22,29 @@
 body{font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
 pre code { background: transparent; }
-@media (min-width: 768px) {
-  .bs-docs-home .bs-social, 
-  .bs-docs-home .bs-masthead-links {
-    margin-left: 0;
-  }
-}
-
-.bs-docs-section p {
-  line-height: 2;
-}
-
-.bs-docs-section p.lead {
-  line-height: 1.4;
 }
 
 </style>
 </head>
 
 <body>
- <div class="navbar navbar-default" role="navigation">
+ <div id="top_banner" class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><img src="/img/vim.png" /></a>
-      <div class="page-header">
-        <h1>Vim-Tips.com <small>Daily Tips For Vim</small></h1>
-      </div>
+      <a href="/"><img src="/img/vim.png" /></a>
     </div>
-  </div>
-  <div class="container">
-  <div class="navbar-right">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <li class="active"><a href="/about">About</a></li>
-        <li><a href="#"></a></li>
+    <div>
+      <h1>Vim-Tips.com</h1>
+      <small>Vim的技巧点滴与分享</small>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
-    </div><!--/.navbar-collapse -->
+    </div>
   </div>
 </div>
 
