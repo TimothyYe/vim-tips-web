@@ -45,9 +45,13 @@ pre code { background: transparent; }
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><img src="/img/vim.png" /></a>
-      <a class="navbar-brand" href="/"><h3>Daily tips for Vim</h3></a>
+      <div class="page-header">
+        <h1>Vim-Tips.com <small>Daily Tips For Vim</small></h1>
+      </div>
     </div>
-     <div class="navbar-right">
+  </div>
+  <div class="container">
+  <div class="navbar-right">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
         <li class="active"><a href="/about">About</a></li>
