@@ -1,4 +1,23 @@
 #top_banner {
-	background-color: #3FB8AF;
-	color: #FFFFFF;
+	background-color: #C5E0DC;
+	color: #774F38;
+}
+
+.navbar {
+	border: 0px solid transparent;
+	margin-bottom: 0px;
+}
+
+#wrapper {
+	height: 700px;
+}
+
+#content {
+	background-color: #ECE5CE;
+	height: 100%;
+}
+
+#footer {
+	background-color: #E08E79;
+	height: 50px;
 }

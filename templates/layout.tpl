@@ -11,8 +11,8 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/css/style.css" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
   <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 
@@ -27,7 +27,7 @@ pre code { background: transparent; }
 </style>
 </head>
 
-<body>
+<body style="background-color: #;">
  <div id="top_banner" class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -48,14 +48,14 @@ pre code { background: transparent; }
   </div>
 </div>
 
-<div class="container">
+<div id="wrapper">
+<div id="content">
   {{ yield }}
 </div>
 
-<footer>
-  <div class="container">
+  <div id="footer" class="navbar navbar-fixed-bottom">
   </div>
-</footer>
+</div>
 
 </div> <!-- /container -->
 </body>
