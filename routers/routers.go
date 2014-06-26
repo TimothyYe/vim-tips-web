@@ -5,8 +5,9 @@ import (
 	"github.com/go-martini/martini"
 )
 
-func Init(m *martini.ClassicMartini) {
+func Initialize(m *martini.ClassicMartini) {
 	m.Use(render.Renderer(render.Options{
+		Layout:     "layout",
 		Directory:  "templates",
 		Extensions: []string{".tpl", ".html"},
 		Charset:    "UTF-8",

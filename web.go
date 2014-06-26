@@ -12,7 +12,7 @@ var (
 )
 
 func main() {
-	routers.Init(m)
+	routers.Initialize(m)
 	http.Handle("/", m)
 
 	fmt.Println("Server started...")
