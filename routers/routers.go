@@ -16,10 +16,6 @@ func Initialize(m *martini.ClassicMartini) {
 	InitRouters(m)
 }
 
-func Hello(r render.Render) {
-	r.HTML(200, "hello", "Timothy")
-}
-
 func InitRouters(m *martini.ClassicMartini) {
-	m.Get("/", Hello)
+	m.Get("/", HandleIndex)
 }

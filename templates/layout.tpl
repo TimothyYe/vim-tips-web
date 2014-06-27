@@ -11,22 +11,22 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
-  <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
 
-<!-- Custom styles for this template -->
-<!--   <link href="theme.css" rel="stylesheet"> -->
-<style>
-body {
-  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
-}
+  <!-- Custom styles for this template -->
+  <!--   <link href="theme.css" rel="stylesheet"> -->
+  <style>
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {
-  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
-}
-</style>
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {
+    font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
+  }
+  </style>
 </head>
 
 <body style="background-color: #ECE5CE;">
@@ -53,14 +53,19 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {
 </div>
 
 <div id="wrapper">
-<div id="content">
-  {{ yield }}
-</div>
+  <div id="content" class="container">
+    {{ yield }}
+  </div>
 
   <div id="footer" class="navbar navbar-fixed-bottom">
+    <div id="copyright" class="container">
+      <div class="row">
+        <div class="col-md-8"><a href="http://vim-tips.com">Vim-Tips.com</a>, powered by Golang &amp; Martini.</div>
+        <div class="col-md-4">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
+      </div>
+    </div>
   </div>
 </div>
 
-</div> <!-- /container -->
 </body>
 </html>
