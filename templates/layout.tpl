@@ -15,6 +15,7 @@
   <link href="/css/style.css" rel="stylesheet">
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/js/tips.js"></script>
 
   <!-- Custom styles for this template -->
   <!--   <link href="theme.css" rel="stylesheet"> -->
