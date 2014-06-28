@@ -11,10 +11,10 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
-  <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 
   <!-- Custom styles for this template -->
   <!--   <link href="theme.css" rel="stylesheet"> -->

@@ -22,9 +22,49 @@
 }
 
 #tip-content {
-	background-color: #F1D4AF;
+	background-color: #FFFFFF;
 	height: 200px;
 	margin-top: 200px;
+}
+
+#tip-content a {
+	text-decoration: none;
+}
+
+.round
+{
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.light-bulb {
+  bottom:-43px;
+  left:-30px;
+  position:absolute;
+}
+
+.tip-text {
+  font-family: verdana, arial, sans-serif;
+  padding:50px 75px 35px 150px;
+}
+
+.tip-text .content {
+	color: red;
+	font-size: 22px;
+}
+
+
+.tip-text .comment {
+	color: #747D67;
+	margin-top: 10px;
+	font-size: 22px;
+	ling-height: 20px;
+}
+
+#tip_id {
+	display: none;
 }
 
 #footer {
