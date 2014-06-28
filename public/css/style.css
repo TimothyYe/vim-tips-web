@@ -21,6 +21,12 @@
 	height: 100%;
 }
 
+#tip-content {
+	background-color: #F1D4AF;
+	height: 200px;
+	margin-top: 200px;
+}
+
 #footer {
 	background-color: #E08E79;
 	height: 50px;
