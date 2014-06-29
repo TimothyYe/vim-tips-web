@@ -61,8 +61,12 @@
   <div id="footer" class="navbar navbar-fixed-bottom">
     <div id="copyright" class="container">
       <div class="row">
-        <div class="col-md-8"><a href="http://vim-tips.com">Vim-Tips.com</a>, powered by Golang &amp; Martini.</div>
-        <div class="col-md-4">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
+        <div class="col-md-12">
+				<div class="col-md-6"><a href="http://vim-tips.com">Vim-Tips.com</a>, powered by Golang &amp; Martini.</div>
+        <div class="col-md-6">
+					<div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
+				</div>
+				</div>
       </div>
     </div>
   </div>
