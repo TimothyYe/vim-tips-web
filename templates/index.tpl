@@ -6,11 +6,11 @@
 			<div class="tip-text">
 
 				<div class="content">
-					:E
+					{{.Content}}
 				</div>
 
 				<div class="comment">
-					Hello Timothy!
+					{{.Comment}}
 				</div>
 
 				<div id="tip_id">

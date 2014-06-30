@@ -4,13 +4,19 @@ import (
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
+	"labix.org/v2/mgo"
 )
 
 func DB() martini.Handler {
-	fmt.Println("DB handler is called...1")
+	session, err := mgo.Dial("mongodb://localhost")
+	if err != nil {
+		fmt.Println("Failed to connect to mongo DB...")
+		panic(err)
+	}
 
-	return func() {
-		fmt.Println("DB handler is called...2")
+	return func(c martini.Context) {
+		s := session.Clone()
+		c.Map(s.DB("vim_tips"))
 	}
 }
 
