@@ -7,17 +7,14 @@ import (
 	"labix.org/v2/mgo"
 )
 
-func DB() martini.Handler {
+func InitDB(m *martini.ClassicMartini) {
 	session, err := mgo.Dial("mongodb://localhost")
 	if err != nil {
 		fmt.Println("Failed to connect to mongo DB...")
 		panic(err)
 	}
 
-	return func(c martini.Context) {
-		s := session.Clone()
-		c.Map(s.DB("vim_tips"))
-	}
+	m.Map(session.DB("vim_tips"))
 }
 
 func Initialize(m *martini.ClassicMartini) {
@@ -28,8 +25,7 @@ func Initialize(m *martini.ClassicMartini) {
 		Charset:    "UTF-8",
 	}))
 
-	m.Use(DB)
-
+	InitDB(m)
 	InitRouters(m)
 }
 
