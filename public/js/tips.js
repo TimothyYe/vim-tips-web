@@ -6,7 +6,7 @@ function refreshTips()
 {
 	$("#tip-content").hide();
 
-	$.get("http://vim-tips.com/", function(data){
+	$.get("http://localhost:3000", function(data){
 		var result = $(data);
 		$(".content").text(result.find('.content').text());
 		$(".comment").text(result.find('.comment').text());
