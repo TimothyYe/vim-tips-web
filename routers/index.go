@@ -19,5 +19,8 @@ func HandleIndex(r render.Render, db *mgo.Database) {
 	index := getRandomIndex(total)
 	db.C("tips").Find(nil).Skip(index).One(&tip)
 
-	r.HTML(200, "index", tip)
+	r.HTML(200, "index", map[string]interface{}{
+		"Comment": tip.Comment,
+		"Content": tip.Content,
+		"Id":      tip.Id.Hex()})
 }
