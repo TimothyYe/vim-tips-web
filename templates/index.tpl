@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 round" id="tip-content">
 		<img src="/img/lightbulb.png" class="light-bulb" alt=""/>
-		<a href="#">
+		<a href="http://localhost:3000/{{.Id}}">
 
 			<div class="tip-text">
 
