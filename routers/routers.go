@@ -31,4 +31,5 @@ func Initialize(m *martini.ClassicMartini) {
 
 func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/", HandleIndex)
+	m.Get("/tips/:Id", HandleTip)
 }
