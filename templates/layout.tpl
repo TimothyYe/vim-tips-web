@@ -15,7 +15,9 @@
   <link href="/css/style.css" rel="stylesheet">
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  {{ if .IsIndex }}
   <script src="/js/tips.js"></script>
+  {{ end }}
 
   <!-- Custom styles for this template -->
   <!--   <link href="theme.css" rel="stylesheet"> -->
