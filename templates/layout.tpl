@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta content="Vim,Vimer,Vim技巧,Vim教程,Vim学习,Vim编辑器" name="keywords" />
+  <meta content="Vim tips,Vimer的园地,来自Vim的每日技巧与点滴,让你每天都能学到来自Vim的奇淫技巧,让你的Vim更进一步..."name="description" />
+  <title>VimTips - Daily tips for Vim!</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +49,10 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/tools">Tools</a></li>
+        <li class="active"><a href="/">首页</a></li>
+        <li><a href="/tools">工具</a></li>
         <li><a href="/api">API</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">关于</a></li>
       </ul>
     </div>
   </div>

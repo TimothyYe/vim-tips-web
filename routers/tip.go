@@ -13,7 +13,7 @@ func HandleTip(r render.Render, db *mgo.Database, params martini.Params) {
 
 	db.C("tips").FindId(bson.ObjectIdHex(params["Id"])).One(&tip)
 
-	r.HTML(200, "index", map[string]interface{}{
+	r.HTML(200, "tip", map[string]interface{}{
 		"Comment": tip.Comment,
 		"Content": tip.Content,
 		"Id":      tip.Id.Hex()})
