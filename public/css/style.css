@@ -9,7 +9,12 @@
 }
 
 #title {
-	margin-top: 30px;
+	margin-top: 25px;
+}
+
+#title h1 {
+	font-family: Lobster;
+	font-size: 3.3em;
 }
 
 #wrapper {

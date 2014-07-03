@@ -14,6 +14,7 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
+  <link href="http://fonts.useso.com/css?family=Lobster" rel="stylesheet" type="text/css"/>
   <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
