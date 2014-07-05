@@ -50,10 +50,10 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/">首页</a></li>
-        <li><a href="/tools">工具</a></li>
-        <li><a href="/api">API</a></li>
-        <li><a href="/about">关于</a></li>
+        <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
+        <li {{ if .IsTools }} class="active" {{ end }}><a href="/tools">工具</a></li>
+        <li {{ if .IsAPI }} class="active" {{ end }} ><a href="/api">API</a></li>
+        <li {{ if .IsAbout }} class="active" {{ end }} ><a href="/about">关于</a></li>
       </ul>
     </div>
   </div>
@@ -68,7 +68,7 @@
     <div id="copyright" class="container">
       <div class="row">
         <div class="col-md-12">
-				<div class="col-md-6"><a href="http://vim-tips.com">Vim-Tips.com</a>, powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a>.</div>
+				<div class="col-md-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a>.</div>
         <div class="col-md-6">
 					<div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
 				</div>
