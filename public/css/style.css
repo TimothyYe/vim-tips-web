@@ -36,6 +36,12 @@
 	text-decoration: none;
 }
 
+#login-div {
+	background: transparent;
+	height: 200px;
+	margin-top: 200px;
+}
+
 .round
 {
 	border-bottom-left-radius: 15px;
