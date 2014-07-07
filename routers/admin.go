@@ -6,5 +6,5 @@ import (
 
 func HandleLogin(r render.Render) {
 	r.HTML(200, "admin/login", map[string]interface{}{
-		"IsAbout": true}, render.HTMLOptions{"admin/layout"})
+		"IsAbout": true}, render.HTMLOptions{""})
 }
