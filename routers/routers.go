@@ -25,6 +25,7 @@ func Initialize(m *martini.ClassicMartini) {
 		Charset:    "UTF-8",
 	}))
 
+	InitConnections()
 	InitDB(m)
 	InitRouters(m)
 }

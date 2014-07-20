@@ -13,6 +13,8 @@ var (
 
 func main() {
 	routers.Initialize(m)
+
+	http.HandleFunc("/ws", routers.WSHandler)
 	http.Handle("/", m)
 
 	fmt.Println("Server started...")
@@ -21,4 +23,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
+
+func ShowMessage(mess string) {
+	fmt.Println(mess)
 }
