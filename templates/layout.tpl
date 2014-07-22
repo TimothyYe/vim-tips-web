@@ -43,20 +43,27 @@
       <a href="/"><img src="/img/vim.png" /></a>
     </div>
     <div>
-      <div id="title">
-        <h1>Vim-Tips.com</h1>
-        <small>Vim的技巧点滴与分享</small>
-      </div>
+     <div class="pull-right">
+      <iframe src="http://ghbtns.com/github-btn.html?user=timothyye&repo=vim-tips-web&type=watch&count=true"
+      allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user=timothyye&repo=vim-tips-web&type=fork&count=true"
+      allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
     </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
-        <li {{ if .IsTools }} class="active" {{ end }}><a href="/tools">工具</a></li>
-        <li {{ if .IsAPI }} class="active" {{ end }} ><a href="/api">API</a></li>
-        <li {{ if .IsAbout }} class="active" {{ end }} ><a href="/about">关于</a></li>
-      </ul>
+    <div id="title">
+      <h1>Vim-Tips.com</h1>
+      <small>Vim的技巧点滴与分享</small>
     </div>
+
   </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
+      <li {{ if .IsTools }} class="active" {{ end }}><a href="/tools">工具</a></li>
+      <li {{ if .IsAPI }} class="active" {{ end }} ><a href="/api">API</a></li>
+      <li {{ if .IsAbout }} class="active" {{ end }} ><a href="/about">关于</a></li>
+    </ul>
+  </div>
+</div>
 </div>
 
 <div id="wrapper">
@@ -68,14 +75,14 @@
     <div id="copyright" class="container">
       <div class="row">
         <div class="col-md-12">
-				<div class="col-md-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a>.</div>
-        <div class="col-md-6">
-					<div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
-				</div>
-				</div>
-      </div>
-    </div>
-  </div>
+          <div class="col-md-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a>.</div>
+          <div class="col-md-6">
+           <div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 
 </body>

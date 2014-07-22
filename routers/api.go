@@ -9,10 +9,6 @@ import (
 func HandleAPI(r render.Render) {
 	r.HTML(200, "api", map[string]interface{}{
 		"IsAPI": true})
-	//r.JSON(status, v)
-
-	//return "j: move cursor to next row."
-
 }
 
 func HandleRandomTxtTip(db *mgo.Database) string {
