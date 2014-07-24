@@ -19,3 +19,12 @@ func HandleRandomTxtTip(db *mgo.Database) string {
 
 	return tip.Content + " " + tip.Comment
 }
+
+func HandleRandomJsonTip(db *mgo.Database, r render.Render) {
+	tip := models.Tips{}
+	total, _ := db.C("tips").Count()
+	index := getRandomIndex(total)
+	db.C("tips").Find(nil).Skip(index).One(&tip)
+
+	r.JSON(200, tip)
+}

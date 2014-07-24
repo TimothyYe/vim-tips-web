@@ -34,6 +34,7 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/", HandleIndex)
 	m.Get("/tips/:Id", HandleTip)
 	m.Get("/random_tips/txt", HandleRandomTxtTip)
+	m.Get("/random_tips/json", HandleRandomJsonTip)
 	m.Get("/api", HandleAPI)
 	m.Get("/tools", HandleTools)
 	m.Get("/about", HandleAbout)
