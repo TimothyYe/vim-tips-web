@@ -5,8 +5,7 @@ import (
 )
 
 type API struct {
-	Id        bson.ObjectId `bson:"_id,omitempty"`
-	Type      string
-	JsonCount uint64
-	TxtCount  uint64
+	Id    bson.ObjectId `bson:"_id,omitempty"`
+	Type  string
+	Count uint64
 }

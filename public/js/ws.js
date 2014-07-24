@@ -28,6 +28,7 @@ function connectServer()
 	sock.onmessage = function(e) {
 		console.log("message received: " + e.data);
 
-		$("#msg").text(e.data);
+		var data = $.parseJSON(e.data);
+		$("#msg").text(data.Count);
 	};
 }
