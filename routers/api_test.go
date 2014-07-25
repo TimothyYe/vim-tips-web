@@ -6,7 +6,7 @@ import (
 )
 
 func TestHandleRandomTxtTip(t *testing.T) {
-	session, err := mgo.Dial("mongodb://localhost")
+	_, err := mgo.Dial("mongodb://localhost")
 	if err != nil {
 		t.Error("Failed to connect to mongo DB...")
 	} else {
