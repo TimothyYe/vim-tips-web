@@ -1,4 +1,4 @@
-package gotest
+package routers
 
 import (
 	"labix.org/v2/mgo"
