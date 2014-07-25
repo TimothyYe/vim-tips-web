@@ -40,9 +40,25 @@ func HandleRandomTxtTip(db *mgo.Database) string {
 
 func HandleRandomJsonTip(db *mgo.Database, r render.Render) {
 	tip := models.Tips{}
+	api := models.API{}
 	total, _ := db.C("tips").Count()
 	index := getRandomIndex(total)
 	db.C("tips").Find(nil).Skip(index).One(&tip)
+	err := db.C("apis").Find(bson.M{"type": "json"}).One(&api)
+
+	api.Count++
+
+	if err != nil {
+		db.C("apis").Insert(&models.API{Id: bson.NewObjectId(), Type: "json", Count: 0})
+	} else {
+		db.C("apis").Update(bson.M{"type": "json"}, bson.M{"type": "json", "count": api.Count})
+	}
+
+	data, err := json.Marshal(api)
+
+	if err == nil {
+		sendAll(data)
+	}
 
 	r.JSON(200, tip)
 }
