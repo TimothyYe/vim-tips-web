@@ -8,9 +8,26 @@ import (
 	"labix.org/v2/mgo/bson"
 )
 
-func HandleAPI(r render.Render) {
+func HandleAPI(db *mgo.Database, r render.Render) {
+	txt_api := models.API{}
+	json_api := models.API{}
+
+	err := db.C("apis").Find(bson.M{"type": "txt"}).One(&txt_api)
+
+	if err != nil {
+		return
+	}
+
+	err = db.C("apis").Find(bson.M{"type": "json"}).One(&json_api)
+
+	if err != nil {
+		return
+	}
+
 	r.HTML(200, "api", map[string]interface{}{
-		"IsAPI": true})
+		"IsAPI":       true,
+		"TxtCounter":  txt_api.Count,
+		"JsonCounter": json_api.Count})
 }
 
 func HandleRandomTxtTip(db *mgo.Database) string {

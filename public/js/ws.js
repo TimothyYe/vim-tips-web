@@ -29,6 +29,14 @@ function connectServer()
 		console.log("message received: " + e.data);
 
 		var data = $.parseJSON(e.data);
-		$("#msg").text(data.Count);
+
+		if(data.Type == "txt")
+		{
+			$("#txt-counter").text(data.Count);
+		}
+		else if (data.Type == "json")
+		{
+			$("#json-counter").text(data.Count);	
+		}
 	};
 }

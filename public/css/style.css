@@ -73,29 +73,37 @@
 	display: none;
 }
 
-#api_container {
+#api-container {
 	margin-top: 200px;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 1.8em;
 }
 
-#api_container .api_counter {
+#api-container .api-counter {
 	padding-top: 14px;
 	font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 	font-size: 0.7em;
 }
 
-#api_container .api_counter span{
+#api-container .api-counter span{
 	font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 	font-size: 1.4em;
 }
 
-#api_txt{
+#api-txt{
 	margin-top: 40px;
 }
 
-#api_txt a {
+#api-txt a {
 	margin-top: 10px;
+}
+
+#txt-counter {
+	color: #774F38;
+}
+
+#json-counter {
+	color: #774F38;
 }
 
 #disqus{
