@@ -59,6 +59,7 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
+      <li {{ if .IsCasts }} class="active" {{ end }}><a href="/casts">播客</a></li>
       <li {{ if .IsTools }} class="active" {{ end }}><a href="/tools">工具</a></li>
       <li {{ if .IsAPI }} class="active" {{ end }} ><a href="/api">API</a></li>
       <li {{ if .IsAbout }} class="active" {{ end }} ><a href="/about">关于</a></li>
