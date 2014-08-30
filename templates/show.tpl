@@ -1,9 +1,9 @@
 <link href="http://vjs.zencdn.net/4.7/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/4.7/video.js"></script>
 
-<div class="row" id="api-container">
+<div class="row" id="cast-container">
 	<div class="col-md-8 col-md-offset-2" id="api-json">
-		<video class="video-js vjs-default-skin" autoplay controls preload="auto" width="860" height="483" data-setup="{}">
+		<video class="video-js vjs-default-skin" autoplay controls preload="auto" width="750" height="483" data-setup="{}">
 			<source src="http://media.happycasts.net/assets/episodes/videos/097-togetherjs.mov" type='video/mp4'>
 		</video>
 	</div>
