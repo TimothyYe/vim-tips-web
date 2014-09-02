@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
+	"github.com/martini-contrib/sessions"
 	"labix.org/v2/mgo"
 )
 
@@ -25,6 +26,9 @@ func Initialize(m *martini.ClassicMartini) {
 		Charset:    "UTF-8",
 	}))
 
+	store := sessions.NewCookieStore([]byte("vim-tips-secure"))
+	m.Use(sessions.Sessions("my_session", store))
+
 	InitConnections()
 	InitDB(m)
 	InitRouters(m)
@@ -40,5 +44,6 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/api", HandleAPI)
 	m.Get("/tools", HandleTools)
 	m.Get("/about", HandleAbout)
-	m.Get("/admin/login", HandleLogin)
+	m.Get("/admin/login", ShowLoginPage)
+	m.Post("/admin/login", HandleLogin)
 }
