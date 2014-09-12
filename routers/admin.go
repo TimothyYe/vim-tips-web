@@ -7,10 +7,10 @@ import (
 
 func ShowLoginPage(r render.Render) {
 	r.HTML(200, "admin/login", map[string]interface{}{
-		"IsAbout": true}, render.HTMLOptions{""})
+		"IsAbout": true})
 }
 
 func HandleLogin(r render.Render, s sessions.Session) {
-	r.HTML(200, "admin/login", map[string]interface{}{
-		"IsAbout": true}, render.HTMLOptions{""})
+	r.HTML(200, "admin/index", map[string]interface{}{
+		"IsAbout": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
