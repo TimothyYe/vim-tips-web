@@ -49,13 +49,13 @@
       <div class="form-group form-group-lg">
         
         <div class="col-md-12">
-          <input type="email" class="form-control input-lg text-center" id="inputEmail3" placeholder="Email">
+          <input type="email" class="form-control input-lg text-center" id="inputEmail3" name="username" placeholder="Email">
         </div>
       </div>
       <div class="form-group">
         
         <div class="col-md-12">
-          <input type="password" class="form-control input-lg text-center" id="inputPassword3" placeholder="Password">
+          <input type="password" class="form-control input-lg text-center" id="inputPassword3" name="password" placeholder="Password">
         </div>
       </div>
 
