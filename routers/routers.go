@@ -46,5 +46,5 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/about", HandleAbout)
 	m.Get("/admin/login", ShowLoginPage)
 	m.Post("/admin/login", HandleLogin)
-	m.Get("/admin/index", HandleAdminIndex)
+	m.Get("/admin", HandleAdminIndex)
 }

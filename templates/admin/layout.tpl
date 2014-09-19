@@ -19,9 +19,6 @@
   <link href="/css/admin.css" rel="stylesheet">
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-  {{ if .IsIndex }}
-  <script src="/js/tips.js"></script>
-  {{ end }}
 
   <!-- Custom styles for this template -->
   <!--   <link href="theme.css" rel="stylesheet"> -->
@@ -37,31 +34,34 @@
 </head>
 
 <body style="background-color: #ECE5CE;">
- <div id="top_banner" class="navbar navbar-default" role="navigation">
+ <div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a href="/"><img src="/img/vim.png" /></a>
-    </div>
-    <div>
-      <div id="title">
-        <h1>Vim-Tips.com</h1>
-        <small>Vim的技巧点滴与分享</small>
-      </div>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">VimTips</a>
     </div>
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
-        <li {{ if .IsTools }} class="active" {{ end }}><a href="/tools">工具</a></li>
-        <li {{ if .IsAPI }} class="active" {{ end }} ><a href="/api">API</a></li>
-        <li {{ if .IsAbout }} class="active" {{ end }} ><a href="/about">关于</a></li>
+      <ul class="nav navbar-nav">
+        <li class="{{ if .IsIndex }}active{{ end }}"><a href="/admin/index">管理首页</a></li>
+        <li class="{{ if .IsTips }}active{{ end }}"><a href="/admin/order">Tips管理</a></li>
+        <li class="{{ if .IsCasts }}active{{ end }}"><a href="/admin/express">播客管理</a></li>
+        <li class="{{ if .IsPassword }}active{{ end }}"><a href="#">密码修改</a></li>
       </ul>
-    </div>
+
+      <form class="navbar-form navbar-right" role="form" method="get" action="/admin/logout">
+        <button type="submit" class="btn btn-success">退出后台管理</button>
+      </form>
+    </div><!--/.navbar-collapse -->
   </div>
 </div>
 
 <div id="wrapper">
   <div id="content" class="container">
-    Admin Layout
     {{ yield }}
   </div>
 
