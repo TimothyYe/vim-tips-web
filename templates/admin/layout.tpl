@@ -33,7 +33,7 @@
   </style>
 </head>
 
-<body style="background-color: #ECE5CE;">
+<body style="background-color: #FFFFFF;">
  <div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
