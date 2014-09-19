@@ -11,13 +11,21 @@ func validateSession(r render.Render, s sessions.Session, retUrl string) {
 	isLogin := s.Get("IsLogin")
 
 	if isLogin == nil {
+		fmt.Println("Not login...")
 		r.Redirect("/admin/login")
+	} else {
+		fmt.Println("Already login...")
 	}
 }
 
 func ShowLoginPage(r render.Render) {
 	r.HTML(200, "admin/login", map[string]interface{}{
 		"IsAbout": true}, render.HTMLOptions{})
+}
+
+func HandleLogout(r render.Render, s sessions.Session) {
+	s.Delete("IsLogin")
+	r.Redirect("/admin/login")
 }
 
 func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
