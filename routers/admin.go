@@ -48,3 +48,10 @@ func HandleAdminIndex(r render.Render, s sessions.Session) {
 	r.HTML(200, "admin/index", map[string]interface{}{
 		"IsAbout": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
+
+func AdminShowTips(r render.Render, s sessions.Session) {
+	validateSession(r, s, "/admin/login")
+
+	r.HTML(200, "admin/tips_index", map[string]interface{}{
+		"IsAbout": true}, render.HTMLOptions{Layout: "admin/layout"})
+}
