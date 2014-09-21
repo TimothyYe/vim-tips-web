@@ -4,8 +4,16 @@ import (
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/martini-contrib/sessions"
+	"github.com/timothyye/vim-tips-web/models"
+	"labix.org/v2/mgo"
 	"net/http"
 )
+
+func SetPaginator(req *http.Request, per int, nums int) *Paginator {
+	p := NewPaginator(req, per, nums)
+	//this.Data["paginator"] = p
+	return p
+}
 
 func validateSession(r render.Render, s sessions.Session, retUrl string) {
 	isLogin := s.Get("IsLogin")
@@ -46,12 +54,24 @@ func HandleAdminIndex(r render.Render, s sessions.Session) {
 	validateSession(r, s, "/admin/login")
 
 	r.HTML(200, "admin/index", map[string]interface{}{
-		"IsAbout": true}, render.HTMLOptions{Layout: "admin/layout"})
+		"IsIndex": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminShowTips(r render.Render, s sessions.Session) {
+func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessions.Session) {
 	validateSession(r, s, "/admin/login")
 
+	num, _ := db.C("tips").Count()
+
+	pers := 8
+	pager := SetPaginator(req, pers, num)
+
+	tips := []models.Tips{}
+
+	db.C("tips").Find(nil).Limit(pers).Skip(pager.Offset()).All(&tips)
+
 	r.HTML(200, "admin/tips_index", map[string]interface{}{
-		"IsAbout": true}, render.HTMLOptions{Layout: "admin/layout"})
+		"IsTips":    true,
+		"Tips":      tips,
+		"Paginator": pager,
+		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
