@@ -9,12 +9,6 @@ import (
 	"net/http"
 )
 
-func SetPaginator(req *http.Request, per int, nums int) *Paginator {
-	p := NewPaginator(req, per, nums)
-	//this.Data["paginator"] = p
-	return p
-}
-
 func validateSession(r render.Render, s sessions.Session, retUrl string) {
 	isLogin := s.Get("IsLogin")
 
@@ -63,7 +57,7 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 	num, _ := db.C("tips").Count()
 
 	pers := 8
-	pager := SetPaginator(req, pers, num)
+	pager := NewPaginator(req, pers, num)
 
 	tips := []models.Tips{}
 
