@@ -9,3 +9,9 @@ type Tips struct {
 	Content string
 	Comment string
 }
+
+type TipsView struct {
+	Id      string
+	Content string
+	Comment string
+}

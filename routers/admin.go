@@ -60,12 +60,17 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 	pager := NewPaginator(req, pers, num)
 
 	tips := []models.Tips{}
+	viewTips := []models.TipsView{}
 
 	db.C("tips").Find(nil).Limit(pers).Skip(pager.Offset()).All(&tips)
 
+	for _, t := range tips {
+		viewTips = append(viewTips, models.TipsView{Id: t.Id.Hex(), Content: t.Content, Comment: t.Comment})
+	}
+
 	r.HTML(200, "admin/tips_index", map[string]interface{}{
 		"IsTips":    true,
-		"Tips":      tips,
+		"Tips":      viewTips,
 		"Paginator": pager,
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
