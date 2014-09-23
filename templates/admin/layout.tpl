@@ -19,6 +19,7 @@
   <link href="/css/admin.css" rel="stylesheet">
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
   <!-- Custom styles for this template -->
   <!--   <link href="theme.css" rel="stylesheet"> -->
