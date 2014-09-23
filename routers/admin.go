@@ -74,3 +74,10 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 		"Paginator": pager,
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
+
+func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database, s sessions.Session) {
+	validateSession(r, s, "/admin/login")
+
+	r.HTML(200, "admin/index", map[string]interface{}{
+		"IsTips": true}, render.HTMLOptions{Layout: "admin/layout"})
+}
