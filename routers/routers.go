@@ -6,16 +6,19 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/sessions"
 	"labix.org/v2/mgo"
+	"net/http"
 )
 
-func InitDB(m *martini.ClassicMartini) {
+func InitDB() martini.Handler {
 	session, err := mgo.Dial("mongodb://localhost")
 	if err != nil {
 		fmt.Println("Failed to connect to mongo DB...")
 		panic(err)
 	}
 
-	m.Map(session.DB("vim_tips"))
+	return func(res http.ResponseWriter, r *http.Request, c martini.Context) {
+		c.Map(session.DB("vim_tips"))
+	}
 }
 
 func Initialize(m *martini.ClassicMartini) {
@@ -30,7 +33,7 @@ func Initialize(m *martini.ClassicMartini) {
 	m.Use(sessions.Sessions("my_session", store))
 
 	InitConnections()
-	InitDB(m)
+	m.Use(InitDB())
 	InitRouters(m)
 }
 
