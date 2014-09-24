@@ -15,8 +15,6 @@ func validateSession(r render.Render, s sessions.Session, retUrl string) {
 	if isLogin == nil {
 		fmt.Println("Not login...")
 		r.Redirect("/admin/login")
-	} else {
-		fmt.Println("Already login...")
 	}
 }
 
@@ -56,7 +54,7 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 
 	num, _ := db.C("tips").Count()
 
-	pers := 8
+	pers := 12
 	pager := NewPaginator(req, pers, num)
 
 	tips := []models.Tips{}

@@ -13,6 +13,7 @@
 						<tr>
 							<th>Tip</th>
 							<th>Comments</th>
+							<th>Operations</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -22,13 +23,19 @@
 							<td>{{ .Content }}</td>
 							<td>{{ .Comment }}</td>
 
-							<td>
-								<form role="form" method="get" action="/admin/tips/modify">
-									<input type="hidden" value="{{ .Id }}" name="Id" />
-									<button type="submit" class="btn btn-success btn-sm">修改</button>
-								</form>
-
-								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{ .Id }}">删除</button>
+							<td style="width:120px">
+								<div>
+									<span class="pull-left">
+									<form role="form" method="get" action="/admin/tips/modify">
+										<input type="hidden" value="{{ .Id }}" name="Id" />
+										<button type="submit" class="btn btn-success btn-sm">修改</button>
+									</form>
+								</span>
+						
+								<span class="pull-right">
+									<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{ .Id }}">删除</button>
+								</span>
+								</div>
 							</td>
 
 
