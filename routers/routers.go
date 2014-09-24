@@ -38,6 +38,7 @@ func Initialize(m *martini.ClassicMartini) {
 }
 
 func InitRouters(m *martini.ClassicMartini) {
+	//Routers for front pages
 	m.Get("/", HandleIndex)
 	m.Get("/tips/:Id", HandleTip)
 	m.Get("/random_tips/txt", HandleRandomTxtTip)
