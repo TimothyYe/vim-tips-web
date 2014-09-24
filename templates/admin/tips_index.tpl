@@ -90,6 +90,5 @@
 			{{end}}
 		</div>
 	</div>
-	<hr>
 </div>
 </div>
