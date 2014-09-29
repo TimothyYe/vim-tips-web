@@ -36,7 +36,7 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
 		fmt.Println("Login success!")
 		s.Set("IsLogin", true)
 
-		r.Redirect("/admin")
+		r.Redirect("/admin/index")
 	} else {
 		r.Redirect("/admin/login")
 	}

@@ -49,10 +49,11 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/tools", HandleTools)
 	m.Get("/about", HandleAbout)
 	m.Get("/admin/login", ShowLoginPage)
+	m.Get("/admin/logout", HandleLogout)
+	m.Post("/admin/login", HandleLogin)
+
 	//Routers for admin panel
 	m.Group("/admin", func(r martini.Router) {
-		r.Get("/logout", HandleLogout)
-		r.Post("/login", HandleLogin)
 		r.Get("/index", HandleAdminIndex)
 		r.Get("/tips", AdminShowTips)
 		r.Get("/tips/add", AdminAddTipsPage)
