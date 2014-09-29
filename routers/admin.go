@@ -73,6 +73,14 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
+func AdminAddTipsPage(r render.Render, s sessions.Session) {
+
+}
+
+func AdminAddTips(r render.Render, s sessions.Session) {
+
+}
+
 func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database, s sessions.Session) {
 	validateSession(r, s, "/admin/login")
 
