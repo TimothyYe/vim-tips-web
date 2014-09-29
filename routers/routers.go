@@ -48,13 +48,16 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Get("/api", HandleAPI)
 	m.Get("/tools", HandleTools)
 	m.Get("/about", HandleAbout)
-	//Routers for admin panel
 	m.Get("/admin/login", ShowLoginPage)
-	m.Get("/admin/logout", HandleLogout)
-	m.Post("/admin/login", HandleLogin)
-	m.Get("/admin", HandleAdminIndex)
-	m.Get("/admin/tips", AdminShowTips)
-	m.Get("/admin/tips/add", AdminAddTipsPage)
-	m.Post("/admin/tips/add", AdminAddTips)
-	m.Get("/admin/tips/modify/:Id", AdminModifyTips)
+	//Routers for admin panel
+	m.Group("/admin", func(r martini.Router) {
+		r.Get("/logout", HandleLogout)
+		r.Post("/login", HandleLogin)
+		r.Get("/index", HandleAdminIndex)
+		r.Get("/tips", AdminShowTips)
+		r.Get("/tips/add", AdminAddTipsPage)
+		r.Post("/tips/add", AdminAddTips)
+		r.Get("/tips/modify/:Id", AdminModifyTips)
+	}, validateSession)
+
 }

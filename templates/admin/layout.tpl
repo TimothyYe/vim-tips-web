@@ -48,7 +48,7 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ if .IsIndex }}active{{ end }}"><a href="/admin">管理首页</a></li>
+        <li class="{{ if .IsIndex }}active{{ end }}"><a href="/admin/index">管理首页</a></li>
         <li class="{{ if .IsTips }}active{{ end }}"><a href="/admin/tips">Tips管理</a></li>
         <li class="{{ if .IsCasts }}active{{ end }}"><a href="/admin/casts">播客管理</a></li>
         <li class="{{ if .IsPassword }}active{{ end }}"><a href="/admin/password">密码修改</a></li>
