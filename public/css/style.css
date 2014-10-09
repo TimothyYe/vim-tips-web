@@ -90,6 +90,10 @@
 	font-size: 1.4em;
 }
 
+#api-container .api-url {
+	margin-left: 30px;
+}
+
 #api-txt{
 	margin-top: 40px;
 }
