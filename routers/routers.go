@@ -5,6 +5,7 @@ import (
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/sessions"
+	"github.com/timothyye/martini-paginate"
 	"labix.org/v2/mgo"
 	"net/http"
 )
@@ -55,7 +56,7 @@ func InitRouters(m *martini.ClassicMartini) {
 	//Routers for admin panel
 	m.Group("/admin", func(r martini.Router) {
 		r.Get("/index", HandleAdminIndex)
-		r.Get("/tips", AdminShowTips)
+		r.Get("/tips", paginate.Handler, AdminShowTips)
 		r.Get("/tips/add", AdminAddTipsPage)
 		r.Post("/tips/add", AdminAddTips)
 		r.Get("/tips/modify/:Id", AdminModifyTips)

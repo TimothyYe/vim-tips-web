@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/martini-contrib/sessions"
+	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
 	"net/http"
@@ -47,11 +48,11 @@ func HandleAdminIndex(r render.Render) {
 		"IsIndex": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database) {
+func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 	num, _ := db.C("tips").Count()
 
 	pers := 12
-	pager := NewPaginator(req, pers, num)
+	pager.Init(pers, num)
 
 	tips := []models.Tips{}
 	viewTips := []models.TipsView{}
