@@ -42,12 +42,12 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
 	}
 }
 
-func HandleAdminIndex(r render.Render, s sessions.Session) {
+func HandleAdminIndex(r render.Render) {
 	r.HTML(200, "admin/index", map[string]interface{}{
 		"IsIndex": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessions.Session) {
+func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database) {
 	num, _ := db.C("tips").Count()
 
 	pers := 12
@@ -69,15 +69,15 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, s sessi
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminAddTipsPage(r render.Render, s sessions.Session) {
+func AdminAddTipsPage(r render.Render) {
 
 }
 
-func AdminAddTips(r render.Render, s sessions.Session) {
+func AdminAddTips(r render.Render) {
 
 }
 
-func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database, s sessions.Session) {
+func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database) {
 	r.HTML(200, "admin/index", map[string]interface{}{
 		"IsTips": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
