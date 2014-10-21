@@ -71,7 +71,8 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, pager *
 }
 
 func AdminAddTipsPage(r render.Render) {
-
+	r.HTML(200, "admin/tips_add", map[string]interface{}{
+		"IsTips": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
 func AdminAddTips(r render.Render) {
