@@ -14,9 +14,11 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="http://fonts.useso.com/css?family=Lobster" rel="stylesheet" type="text/css"/>
+<!--   <link href="http://fonts.useso.com/css?family=Lobster" rel="stylesheet" type="text/css"/> -->
   <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/admin.css" rel="stylesheet">
+  <link href="/css/font-awesome-4.2.0/css/font-awesome.css" rel="stylesheet">
+   <link rel="stylesheet" href="http://flatfull.com/themes/todo/css/app.v2.css" type="text/css" />
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
