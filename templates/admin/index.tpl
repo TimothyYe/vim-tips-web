@@ -12,7 +12,7 @@
 			<small class="text-muted text-uc">Tips</small> 
 		</a> 
 	</div> 
-	<div class="col-md-4 padder-v b-a b-light"> 
+	<div class="col-md-4 padder-v b-a b-light lt"> 
 		<span class="fa-stack fa-2x pull-left m-r-sm"> 
 			<i class="fa fa-circle fa-stack-2x text-warning"></i> 
 			<i class="fa fa-camera fa-stack-1x text-white"></i> 
