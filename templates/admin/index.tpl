@@ -1,5 +1,5 @@
 <div class="row m-t-xl m-b-xl">
-	<div class="col-md-4 col-md-offset-5"><img src="/img/vim.png" /></div>
+	<div class="col-md-3 col-md-offset-5 col-xs-2 col-xs-offset-4"><img src="/img/vim.png" /></div>
 </div>
 <div class="row m-l-none m-r-none bg-light lter ">
 	<div class="col-md-4 col-md-offset-2 padder-v b-a b-light"> 
