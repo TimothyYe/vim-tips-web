@@ -20,6 +20,7 @@
   <link href="/css/style.css" rel="stylesheet">
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   {{ if .IsIndex }}
   <script src="/js/tips.js"></script>
   {{ end }}
@@ -40,11 +41,11 @@
 <body style="background-color: #ECE5CE;">
  <div id="top_banner" class="navbar navbar-default" role="navigation">
   <div class="container">
-    <div class="navbar-header">
+    <div class="hidden-xs">
       <a href="/"><img src="/img/vim.png" /></a>
     </div>
     <div>
-     <div class="pull-right">
+     <div class="pull-right hidden-xs">
       <iframe src="http://ghbtns.com/github-btn.html?user=timothyye&repo=vim-tips-web&type=watch&count=true"
       allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
       <iframe src="http://ghbtns.com/github-btn.html?user=timothyye&repo=vim-tips-web&type=fork&count=true"
@@ -54,8 +55,16 @@
       <h1>Vim-Tips.com</h1>
       <small>Vim的技巧点滴与分享</small>
     </div>
-
   </div>
+
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li {{ if .IsIndex }} class="active" {{ end }}><a href="/">首页</a></li>
@@ -76,9 +85,9 @@
   <div id="footer" class="navbar navbar-fixed-bottom">
     <div id="copyright" class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="col-md-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a> &amp; <a href="https://www.digitalocean.com/?refcode=bb0acfa3427e" target="_blank" >DigitalOcean</a></div>
-          <div class="col-md-6">
+        <div class="col-md-12 col-xs-12">
+          <div class="col-md-6 col-xs-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a> &amp; <a href="https://www.digitalocean.com/?refcode=bb0acfa3427e" target="_blank" >DigitalOcean</a></div>
+          <div class="col-md-6 col-xs-6">
            <div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
          </div>
        </div>
