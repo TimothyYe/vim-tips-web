@@ -41,7 +41,7 @@
 <body style="background-color: #ECE5CE;">
  <div id="top_banner" class="navbar navbar-default" role="navigation">
   <div class="container">
-    <div class="hidden-xs">
+    <div class="navbar-header hidden-xs">
       <a href="/"><img src="/img/vim.png" /></a>
     </div>
     <div>
