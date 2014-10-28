@@ -26,15 +26,15 @@
 							<td style="width:120px">
 								<div>
 									<span class="pull-left">
-									<form role="form" method="get" action="/admin/tips/modify">
-										<input type="hidden" value="{{ .Id }}" name="Id" />
-										<button type="submit" class="btn btn-success btn-sm">修改</button>
-									</form>
-								</span>
-						
-								<span class="pull-right">
-									<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{ .Id }}">删除</button>
-								</span>
+										<form role="form" method="get" action="/admin/tips/modify">
+											<input type="hidden" value="{{ .Id }}" name="Id" />
+											<button type="submit" class="btn btn-success btn-sm">修改</button>
+										</form>
+									</span>
+
+									<span class="pull-right">
+										<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{ .Id }}">删除</button>
+									</span>
 								</div>
 							</td>
 
@@ -64,7 +64,9 @@
 						{{ end }}
 					</tbody>
 				</table>
-
+			</div>
+			<div class="row">
+				<div class="m-b-xl">
 				{{if gt .Paginator.PageNums 1}}
 				<ul class="pagination pagination-sm">
 					{{if .Paginator.HasPrev}}
@@ -89,6 +91,8 @@
 			</ul>
 			{{end}}
 		</div>
+		</div>
 	</div>
+</div>
 </div>
 </div>
