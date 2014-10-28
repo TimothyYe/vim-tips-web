@@ -60,8 +60,8 @@
       </div>
 
       <div class="form-group">
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-primary btn-lg col-md-12">Sign in</button>
+        <div class="col-md-12 col-xs-12">
+          <button type="submit" class="btn btn-primary btn-lg col-md-12 col-xs-12">Sign in</button>
         </div>
       </div>
     </form>
