@@ -19,7 +19,15 @@ func validateSession(r render.Render, s sessions.Session) {
 	}
 }
 
-func ShowLoginPage(r render.Render) {
+func ShowLoginPage(r render.Render, s sessions.Session) {
+
+	isLogin := s.Get("IsLogin")
+
+	if isLogin != nil {
+		r.Redirect("/admin/index")
+		return
+	}
+
 	r.HTML(200, "admin/login", map[string]interface{}{
 		"IsAbout": true}, render.HTMLOptions{})
 }
