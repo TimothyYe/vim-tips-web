@@ -10,7 +10,7 @@
 											<h4 class="modal-title" id="myModalLabel">新增Tip</h4>
 										</div>
 										<div class="modal-body">
-											请确认是否删除此条数据？
+											<input type="text" class="form-control input-lg text-center" id="tip" name="tip" placeholder="Tip内容">
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
