@@ -10,14 +10,18 @@
 											<h4 class="modal-title" id="myModalLabel">新增Tip</h4>
 										</div>
 										<div class="modal-body">
-											<input type="text" class="form-control input-lg text-center" id="tip" name="tip" placeholder="Tip内容">
+											<div class="input-group">
+												<span class="input-group-addon">Tip内容:</span>
+												<input type="text" class="form-control input-lg text-center" id="tip" name="tip">
+											</div>
+											<div class="input-group">
+												<span class="input-group-addon">Tip说明:</span>
+												<input type="text" class="form-control input-lg text-center" id="tip_comment" name="comment">
+											</div>
 										</div>
 										<div class="modal-footer">
+											<button type="submit" class="btn btn-danger" >添加</button>
 											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-											<form class="col-md-3" role="form" method="post" action="/admin/order/del">
-												<input type="hidden" value="{{ .Id }}" name="Id" />
-												<button type="submit" class="btn btn-danger" >添加</button>
-											</form>
 										</div>
 									</div><!-- /.modal-content -->
 								</div><!-- /.modal-dialog -->
