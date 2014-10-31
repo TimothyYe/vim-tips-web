@@ -57,7 +57,6 @@ func InitRouters(m *martini.ClassicMartini) {
 	m.Group("/admin", func(r martini.Router) {
 		r.Get("/index", HandleAdminIndex)
 		r.Get("/tips", paginate.Handler, AdminShowTips)
-		r.Get("/tips/add", AdminAddTipsPage)
 		r.Post("/tips/add", AdminAddTips)
 		r.Get("/tips/modify/:Id", AdminModifyTips)
 	}, validateSession)
