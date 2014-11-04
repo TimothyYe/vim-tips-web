@@ -49,10 +49,7 @@
 							<td style="width:120px">
 								<div>
 									<span class="pull-left">
-										<form role="form" method="get" action="/admin/tips/modify">
-											<input type="hidden" value="{{ .Id }}" name="Id" />
-											<button type="submit" class="btn btn-success btn-sm">修改</button>
-										</form>
+										<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#updateTip{{ .Id }}">修改</button>
 									</span>
 
 									<span class="pull-right">
@@ -61,6 +58,33 @@
 								</div>
 							</td>
 
+							<div class="modal fade" id="updateTip{{ .Id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<form role="form" method="post" action="/admin/tips/update">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h4 class="modal-title" id="myModalLabel">新增Tip</h4>
+											</div>
+											<div class="modal-body">
+												<input type="hidden" value="{{ .Id }}" name="Id" />
+												<div class="input-group">
+													<span class="input-group-addon">Tip内容:</span>
+													<input type="text" class="form-control input-lg text-center" id="tip" name="tip" value="{{ .Content }}">
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon">Tip说明:</span>
+													<input type="text" class="form-control input-lg text-center" id="tip_comment" name="comment" value="{{ .Comment }}">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-danger" >更新</button>
+												<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+											</div>
+										</div><!-- /.modal-content -->
+									</form>
+								</div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 
 							<div class="modal fade" id="myModal{{ .Id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
