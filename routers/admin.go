@@ -7,6 +7,7 @@ import (
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
+	"labix.org/v2/mgo/bson"
 	"net/http"
 )
 
@@ -78,8 +79,14 @@ func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, pager *
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminAddTips(r render.Render) {
+func AdminAddTips(req *http.Request, r render.Render, db *mgo.Database) {
+	content := req.FormValue("tip")
+	comment := req.FormValue("comment")
 
+	tip := models.Tips{Id: bson.NewObjectId(), Content: content, Comment: comment}
+	db.C("tips").Insert(tip)
+
+	r.Redirect("/admin/tips")
 }
 
 func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database) {
