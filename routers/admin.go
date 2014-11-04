@@ -89,6 +89,14 @@ func AdminAddTips(req *http.Request, r render.Render, db *mgo.Database) {
 	r.Redirect("/admin/tips")
 }
 
+func AdminDelTips(req *http.Request, r render.Render, db *mgo.Database) {
+	id := req.FormValue("Id")
+
+	db.C("tips").RemoveId(bson.ObjectIdHex(id))
+
+	r.Redirect("/admin/tips")
+}
+
 func AdminModifyTips(req *http.Request, r render.Render, db *mgo.Database) {
 	r.HTML(200, "admin/index", map[string]interface{}{
 		"IsTips": true}, render.HTMLOptions{Layout: "admin/layout"})

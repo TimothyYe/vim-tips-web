@@ -74,7 +74,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-											<form class="col-md-3" role="form" method="post" action="/admin/order/del">
+											<form class="col-md-3" role="form" method="post" action="/admin/tips/del">
 												<input type="hidden" value="{{ .Id }}" name="Id" />
 												<button type="submit" class="btn btn-danger" >确认删除</button>
 											</form>

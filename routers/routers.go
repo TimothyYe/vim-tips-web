@@ -58,6 +58,7 @@ func InitRouters(m *martini.ClassicMartini) {
 		r.Get("/index", HandleAdminIndex)
 		r.Get("/tips", paginate.Handler, AdminShowTips)
 		r.Post("/tips/add", AdminAddTips)
+		r.Post("/tips/del", AdminDelTips)
 		r.Get("/tips/modify/:Id", AdminModifyTips)
 	}, validateSession)
 
