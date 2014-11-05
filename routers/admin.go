@@ -91,7 +91,6 @@ func AdminAddTips(req *http.Request, r render.Render, db *mgo.Database) {
 
 func AdminDelTips(req *http.Request, r render.Render, db *mgo.Database) {
 	id := req.FormValue("Id")
-
 	db.C("tips").RemoveId(bson.ObjectIdHex(id))
 
 	r.Redirect("/admin/tips")
