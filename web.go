@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Println("Server started...")
 
-	err := http.ListenAndServe("127.0.0.1:3001", nil)
+	err := http.ListenAndServe("0.0.0.0:3001", nil)
 	if err != nil {
 		fmt.Println(err)
 	}
