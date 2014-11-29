@@ -117,7 +117,7 @@ func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager 
 	}
 
 	r.HTML(200, "admin/tips_index", map[string]interface{}{
-		"IsTips":    true,
+		"IsCasts":   true,
 		"Tips":      viewTips,
 		"Paginator": pager,
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
