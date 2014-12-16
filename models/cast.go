@@ -8,4 +8,7 @@ type Casts struct {
 	Id         bson.ObjectId `bson:"_id,omitempty"`
 	Author     string
 	VisitCount int
+	Title      string
+	Comments   string
+	Notes      string
 }

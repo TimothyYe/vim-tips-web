@@ -116,7 +116,7 @@ func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager 
 		viewTips = append(viewTips, models.TipsView{Id: t.Id.Hex(), Content: t.Content, Comment: t.Comment})
 	}
 
-	r.HTML(200, "admin/tips_index", map[string]interface{}{
+	r.HTML(200, "admin/casts_index", map[string]interface{}{
 		"IsCasts":   true,
 		"Tips":      viewTips,
 		"Paginator": pager,

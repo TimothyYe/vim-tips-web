@@ -7,7 +7,7 @@
 				<table class="table table-striped col-md-12">
 					<thead>
 						<tr>
-							<th>Tip</th>
+							<th>Title</th>
 							<th>Comments</th>
 							<th>Operations</th>
 						</tr>
