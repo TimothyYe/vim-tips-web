@@ -20,6 +20,10 @@
   <link href="/css/app.css" type="text/css" rel="stylesheet" />
   <link href="/css/style.css" rel="stylesheet" />
 
+  {{ if .IsAbout }}
+  <link rel="stylesheet" type="text/css" href="/css/about.css">
+  {{ end }}
+
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
@@ -28,9 +32,7 @@
   {{ end }}
 
   {{ if .IsAbout }}
-  <script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
-  <script type="text/javascript" src="/js/jquery.easing.js"></script>
-  <script type="text/javascript" src="/js/history.js"></script>
+
   {{ end }}
 
   <!-- Custom styles for this template -->

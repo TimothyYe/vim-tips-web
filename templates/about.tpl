@@ -15,9 +15,14 @@
 					<div id="sign" class="col-md-6">Timothy</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
-	<br/>
-	<br/>
+
+	<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+
+	</div>
+
+</div>
+</div>
+
 </div>
