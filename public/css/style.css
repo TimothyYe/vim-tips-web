@@ -29,7 +29,7 @@
 
 #tip-content {
 	background-color: #FFFFFF;
-	height: 200px;
+	height: auto;
 	margin-top: 200px;
 }
 
@@ -53,7 +53,7 @@
 
 .tip-text {
   font-family: verdana, arial, sans-serif;
-  padding:50px 75px 35px 150px;
+  margin:50px 75px 75px 150px;
 }
 
 .tip-text .content {
@@ -122,6 +122,12 @@
 #footer {
 	background-color: #E08E79;
 	height: 50px;
+}
+
+#about-content {
+	background-color: #FFFFFF;
+	height: auto;
+	margin-top: 200px;
 }
 
 #about{
