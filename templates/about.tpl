@@ -21,7 +21,7 @@
 	<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 	
 	<div id = "sitelog">
-		<strong>网站更新</strong>
+		<strong>更新日志</strong>
 	</div>		
 
 <!-- The Timeline -->
