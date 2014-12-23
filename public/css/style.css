@@ -146,6 +146,18 @@
 	color: #774F38;
 }
 
+#sitelog{
+	margin-top: 60px;
+	color: #774F38;
+	font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+	font-size: 1.4em;
+}
+
+#timeline {
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
 #copyright {
 	margin-top: 15px;
 }

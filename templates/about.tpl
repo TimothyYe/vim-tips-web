@@ -18,20 +18,33 @@
 		</div>
 	</div>
 
-	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+	<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+	
+	<div id = "sitelog">
+		<strong>网站更新</strong>
+	</div>		
 
 <!-- The Timeline -->
-
+<div id="timeline">
 <ul class="timeline">
 
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">2.0版本</span>
+				<span class="time-wrapper"><span class="time">2014.6.21 - 至今</span></span>
+			</div>
+			<div class="desc">使用Golang + Martini + mgo 重写了整站，采用全新的配色风格，后台数据库仍然采用MongoDB</div>
+		</div>
+	</li>
 	<!-- Item 1 -->
 	<li>
 		<div class="direction-r">
 			<div class="flag-wrapper">
-				<span class="flag">Freelancer</span>
-				<span class="time-wrapper"><span class="time">2013 - present</span></span>
+				<span class="flag">1.2版本</span>
+				<span class="time-wrapper"><span class="time">2013.9.23</span></span>
 			</div>
-			<div class="desc">My current employment. Way better than the position before!</div>
+			<div class="desc">数据库从MySQL迁移到MongoDB，整站使用Rails + Mongoid + MongoDB的架构</div>
 		</div>
 	</li>
   
@@ -39,10 +52,10 @@
 	<li>
 		<div class="direction-l">
 			<div class="flag-wrapper">
-				<span class="flag">Apple Inc.</span>
-				<span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+				<span class="flag">1.1版本</span>
+				<span class="time-wrapper"><span class="time">2013.7.14</span></span>
 			</div>
-			<div class="desc">My first employer. All the stuff I've learned and projects I've been working on.</div>
+			<div class="desc">修改了配色，丰富页面内容，加入工具和API页面</div>
 		</div>
 	</li>
 
@@ -50,14 +63,15 @@
 	<li>
 		<div class="direction-r">
 			<div class="flag-wrapper">
-				<span class="flag">Harvard University</span>
-				<span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+				<span class="flag">1.0版本</span>
+				<span class="time-wrapper"><span class="time">2013.7.10</span></span>
 			</div>
-			<div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
+			<div class="desc">网站第一版正式上线，基于Rails的第一个练手项目</div>
 		</div>
 	</li>
   
 </ul>
+</div>
 	</div>
 
 </div>
