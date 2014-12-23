@@ -79,6 +79,13 @@
 	font-size: 1.8em;
 }
 
+#api-container .api-icon {
+	height: 70px;
+	width: 70px;
+	border-radius: 70px;
+	border: 3px solid #FFFFFF;
+}
+
 #api-container .api-counter {
 	padding-top: 14px;
 	font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
