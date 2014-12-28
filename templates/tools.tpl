@@ -5,7 +5,7 @@
 <div class="catCard"><a href="#"><img src="/img/Vim.jpg" alt=""></a>
 <div class="lowerCatCard">
 <h3>Vim插件</h3>
-<p>Vim的tips插件，通过:VimTips命令，随机显示一条vim tips。推荐在ruby环境的系统中使用。</p>
+<p>Vim的tips插件，通过:VimTips命令，随机显示一条vim tips。推荐在Ruby环境的系统中使用。</p>
 <div id="catCardButton" class="button"><a href="https://github.com/TimothyYe/vim-tips" target="_blank">点击查看</a></div>
 </div>
 </div>

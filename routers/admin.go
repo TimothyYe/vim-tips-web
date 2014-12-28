@@ -52,9 +52,16 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
 	}
 }
 
-func HandleAdminIndex(r render.Render) {
+func HandleAdminIndex(r render.Render, db *mgo.Database) {
+	tips_count, err := db.C("tips").Count()
+
+	if err != nil {
+		tips_count = 0
+	}
+
 	r.HTML(200, "admin/index", map[string]interface{}{
-		"IsIndex": true}, render.HTMLOptions{Layout: "admin/layout"})
+		"IsIndex":   true,
+		"TipsCount": tips_count}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
 func AdminShowTips(req *http.Request, r render.Render, db *mgo.Database, pager *paginate.Paginator) {

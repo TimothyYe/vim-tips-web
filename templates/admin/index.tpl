@@ -8,7 +8,7 @@
 			<i class="fa fa-comments fa-stack-1x text-white"></i> 
 		</span> 
 		<a class="clear" href="/admin/tips"> 
-			<span class="h3 block m-t-xs"><strong>1</strong></span> 
+			<span class="h3 block m-t-xs"><strong>{{ .TipsCount }}</strong></span> 
 			<small class="text-muted text-uc">Tips</small> 
 		</a> 
 	</div> 
