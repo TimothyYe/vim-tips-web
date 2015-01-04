@@ -20,6 +20,11 @@ func validateSession(r render.Render, s sessions.Session) {
 	}
 }
 
+func AdminPassword(r render.Render, s sessions.Session) {
+	r.HTML(200, "admin/password", map[string]interface{}{
+		"IsPassword": true}, render.HTMLOptions{Layout: "admin/layout"})
+}
+
 func ShowLoginPage(r render.Render, s sessions.Session) {
 
 	isLogin := s.Get("IsLogin")
