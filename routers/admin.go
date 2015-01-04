@@ -3,6 +3,7 @@ package routers
 import (
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
+	"github.com/jameskeane/bcrypt"
 	"github.com/martini-contrib/sessions"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
@@ -23,6 +24,25 @@ func validateSession(r render.Render, s sessions.Session) {
 func AdminPassword(r render.Render, s sessions.Session) {
 	r.HTML(200, "admin/password", map[string]interface{}{
 		"IsPassword": true}, render.HTMLOptions{Layout: "admin/layout"})
+}
+
+func AdminUpdatePassword(req *http.Request, r render.Render, db *mgo.Database) {
+	pass := req.FormValue("password")
+	verify := req.FormValue("verify")
+
+	if pass == verify {
+
+		hashedPass, _ := bcrypt.Hash(pass)
+		info, err := db.C("id").Upsert(bson.M{"Email": "admin@vim-tips.com"}, bson.M{"$set": bson.M{"Password": hashedPass, "Email": "admin@vim-tips.com"}})
+
+		if err == nil {
+			if info.Updated >= 0 {
+				r.HTML(200, "admin/password", map[string]interface{}{
+					"IsPassword": true,
+					"IsSuccess":  true}, render.HTMLOptions{Layout: "admin/layout"})
+			}
+		}
+	}
 }
 
 func ShowLoginPage(r render.Render, s sessions.Session) {
