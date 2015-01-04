@@ -47,7 +47,7 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
 	username := req.FormValue("username")
 	pass := req.FormValue("password")
 
-	if username == "aa@bb.com" && pass == "111" {
+	if username == "admin@vim-tips.com" && pass == "111" {
 		fmt.Println("Login success!")
 		s.Set("IsLogin", true)
 
