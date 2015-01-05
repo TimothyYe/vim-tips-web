@@ -38,10 +38,16 @@ func AdminUpdatePassword(req *http.Request, r render.Render, db *mgo.Database) {
 		if err == nil {
 			if info.Updated >= 0 {
 				r.HTML(200, "admin/password", map[string]interface{}{
+					"IsPost":     true,
 					"IsPassword": true,
 					"IsSuccess":  true}, render.HTMLOptions{Layout: "admin/layout"})
 			}
 		}
+	} else {
+		r.HTML(200, "admin/password", map[string]interface{}{
+			"IsPost":     true,
+			"IsPassword": true,
+			"IsSuccess":  false}, render.HTMLOptions{Layout: "admin/layout"})
 	}
 }
 
@@ -63,11 +69,23 @@ func HandleLogout(r render.Render, s sessions.Session) {
 	r.Redirect("/admin/login")
 }
 
-func HandleLogin(req *http.Request, r render.Render, s sessions.Session) {
+func HandleLogin(req *http.Request, r render.Render, s sessions.Session, db *mgo.Database) {
 	username := req.FormValue("username")
 	pass := req.FormValue("password")
 
-	if username == "admin@vim-tips.com" && pass == "111" {
+	id := models.Id{}
+	err := db.C("id").Find(nil).One(&id)
+
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	hashedPass, _ := bcrypt.Hash(pass)
+
+	fmt.Println("Hashed pass is:" + hashedPass)
+	fmt.Println("Id pass is:" + id.Password)
+
+	if username == "admin@vim-tips.com" && id.Password == hashedPass {
 		fmt.Println("Login success!")
 		s.Set("IsLogin", true)
 

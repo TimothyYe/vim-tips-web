@@ -1,5 +1,16 @@
   <div class="row m-t-xl">
-  <div class="col-md-4 col-md-offset-4 round" id="login-div"> 
+
+<div class="col-md-4 col-md-offset-4" >
+  {{ if .IsPost}}
+  {{ if .IsSuccess}}
+  <div class="alert alert-success" role="alert">密码更新成功</div>
+  {{ else }}
+  <div class="alert alert-warning" role="alert">密码更新失败</div>
+  {{ end }}
+  {{ end}}
+</div>
+  
+  <div class="col-md-4 col-md-offset-4" > 
     <form class="form-horizontal" role="form" method="post" action="/admin/password">
       <div class="form-group form-group-lg">
         
