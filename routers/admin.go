@@ -1,9 +1,9 @@
 package routers
 
 import (
+	"code.google.com/p/go.crypto/bcrypt"
 	"fmt"
 	"github.com/codegangsta/martini-contrib/render"
-	"github.com/jameskeane/bcrypt"
 	"github.com/martini-contrib/sessions"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
@@ -32,8 +32,8 @@ func AdminUpdatePassword(req *http.Request, r render.Render, db *mgo.Database) {
 
 	if pass == verify {
 
-		hashedPass, _ := bcrypt.Hash(pass)
-		info, err := db.C("id").Upsert(bson.M{"Email": "admin@vim-tips.com"}, bson.M{"$set": bson.M{"Password": hashedPass, "Email": "admin@vim-tips.com"}})
+		hashedPass, _ := bcrypt.GenerateFromPassword([]byte(pass), bcrypt.DefaultCost)
+		info, err := db.C("id").Upsert(bson.M{"email": "admin@vim-tips.com"}, bson.M{"$set": bson.M{"password": hashedPass, "email": "admin@vim-tips.com"}})
 
 		if err == nil {
 			if info.Updated >= 0 {
@@ -73,19 +73,15 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session, db *mgo
 	username := req.FormValue("username")
 	pass := req.FormValue("password")
 
-	id := models.Id{}
-	err := db.C("id").Find(nil).One(&id)
+	id := models.Identity{}
+
+	err := db.C("id").Find(bson.M{"email": "admin@vim-tips.com"}).One(&id)
 
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	hashedPass, _ := bcrypt.Hash(pass)
-
-	fmt.Println("Hashed pass is:" + hashedPass)
-	fmt.Println("Id pass is:" + id.Password)
-
-	if username == "admin@vim-tips.com" && id.Password == hashedPass {
+	if username == "admin@vim-tips.com" && bcrypt.CompareHashAndPassword(id.Password, []byte(pass)) == nil {
 		fmt.Println("Login success!")
 		s.Set("IsLogin", true)
 
