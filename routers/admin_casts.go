@@ -5,6 +5,7 @@ import (
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
+	"labix.org/v2/mgo/bson"
 	"net/http"
 )
 
@@ -36,5 +37,16 @@ func AdminAddCastsPage(req *http.Request, r render.Render, db *mgo.Database) {
 }
 
 func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
+	author := req.FormValue("author")
+	title := req.FormValue("title")
+	intro := req.FormValue("intro")
+	show_notes := req.FormValue("shownotes")
+	url := req.FormValue("url")
+	logo_url := req.FormValue("logourl")
 
+	cast := models.Casts{Id: bson.NewObjectId(), Author: author,
+		VisitCount: 0, Title: title, Intro: intro, ShowNotes: show_notes, Url: url, LogoUrl: logo_url}
+	db.C("casts").Insert(cast)
+
+	r.Redirect("/admin/casts")
 }
