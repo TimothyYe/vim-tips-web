@@ -9,6 +9,7 @@ type Casts struct {
 	Author     string
 	VisitCount int
 	Title      string
-	Comments   string
-	Notes      string
+	Intro      string
+	ShowNotes  string
+	Url        string
 }

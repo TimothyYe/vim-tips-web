@@ -29,3 +29,12 @@ func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager 
 		"Paginator": pager,
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
+
+func AdminAddCastsPage(req *http.Request, r render.Render, db *mgo.Database) {
+	r.HTML(200, "admin/casts_add", map[string]interface{}{
+		"IsCasts": true}, render.HTMLOptions{Layout: "admin/layout"})
+}
+
+func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
+
+}

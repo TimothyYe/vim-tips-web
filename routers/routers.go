@@ -63,6 +63,8 @@ func InitRouters(m *martini.ClassicMartini) {
 		r.Get("/casts", paginate.Handler, AdminShowCasts)
 		r.Get("/password", AdminPassword)
 		r.Post("/password", AdminUpdatePassword)
+		r.Get("/casts/add", AdminAddCastsPage)
+		r.Post("/casts", AdminAddCasts)
 	}, validateSession)
 
 }

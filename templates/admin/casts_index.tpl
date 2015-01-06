@@ -1,6 +1,6 @@
 <div class="row">
 	<div>
-		<button class="btn btn-success m-b-xs">新增</button>
+		<a href="/admin/casts/add"><button class="btn btn-success m-b-xs">新增</button></a>
 		
 		<div class="container">
 			<div class="row">
