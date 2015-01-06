@@ -11,7 +11,8 @@
 
       <div class="form-group">
         <div class="col-md-12">
-          <input type="text" class="form-control" name="title" placeholder="标题">
+          <label for="title">标题</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="填入标题">
         </div>
       </div>
       <button type="submit" class="btn btn-success">新增</button>
