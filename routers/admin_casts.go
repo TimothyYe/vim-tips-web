@@ -2,6 +2,7 @@ package routers
 
 import (
 	"github.com/codegangsta/martini-contrib/render"
+	"github.com/go-martini/martini"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
@@ -9,7 +10,7 @@ import (
 	"net/http"
 )
 
-func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager *paginate.Paginator) {
+func AdminShowCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 	num, _ := db.C("casts").Count()
 
 	pers := 12
@@ -33,7 +34,7 @@ func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager 
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminAddCastsPage(req *http.Request, r render.Render, db *mgo.Database) {
+func AdminAddCastsPage(r render.Render, db *mgo.Database) {
 	r.HTML(200, "admin/casts_add", map[string]interface{}{
 		"IsCasts": true}, render.HTMLOptions{Layout: "admin/layout"})
 }
@@ -52,4 +53,16 @@ func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
 	db.C("casts").Insert(cast)
 
 	r.Redirect("/admin/casts")
+}
+
+func AdminModifyCasts(r render.Render, db *mgo.Database, params martini.Params) {
+
+	cast := models.Casts{}
+
+	db.C("casts").FindId(bson.ObjectIdHex(params["Id"])).One(&cast)
+
+	r.HTML(200, "admin/casts_modify", map[string]interface{}{
+		"IsCasts": true,
+		"Id":      params["Id"],
+		"Cast":    cast}, render.HTMLOptions{Layout: "admin/layout"})
 }
