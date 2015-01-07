@@ -15,6 +15,13 @@
 
       <div class="form-group">
         <div class="col-md-12">
+          <label for="authorurl">作者链接</label>
+          <input type="text" class="form-control" id="authorurl" name="authorurl" placeholder="填入作者链接">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-12">
           <label for="title">标题</label>
           <input type="text" class="form-control" id="title" name="title" placeholder="填入标题">
         </div>

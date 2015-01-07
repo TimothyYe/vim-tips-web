@@ -8,16 +8,17 @@
 					<thead>
 						<tr>
 							<th>Title</th>
-							<th>Comments</th>
-							<th>Operations</th>
+							<th>Author</th>
+							<th>Intro</th>
 						</tr>
 					</thead>
 					<tbody>
 						{{ if .Num }}
-						{{ range .Tips }}
+						{{ range .Casts }}
 						<tr>
-							<td>{{ .Content }}</td>
-							<td>{{ .Comment }}</td>
+							<td>{{ .Title }}</td>
+							<td>{{ .Author }}</td>
+							<td>{{ .Intro }}</td>
 
 							<td style="width:120px">
 								<div>
@@ -43,11 +44,11 @@
 												<input type="hidden" value="{{ .Id }}" name="Id" />
 												<div class="input-group">
 													<span class="input-group-addon">Tip内容:</span>
-													<input type="text" class="form-control input-lg text-center" id="tip" name="tip" value="{{ .Content }}">
+													<input type="text" class="form-control input-lg text-center" id="tip" name="tip" value="{{ .Title }}">
 												</div>
 												<div class="input-group">
 													<span class="input-group-addon">Tip说明:</span>
-													<input type="text" class="form-control input-lg text-center" id="tip_comment" name="comment" value="{{ .Comment }}">
+													<input type="text" class="form-control input-lg text-center" id="tip_comment" name="comment" value="{{ .Author }}">
 												</div>
 											</div>
 											<div class="modal-footer">

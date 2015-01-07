@@ -15,18 +15,20 @@ func AdminShowCasts(req *http.Request, r render.Render, db *mgo.Database, pager 
 	pers := 12
 	pager.Init(pers, num)
 
-	tips := []models.Tips{}
-	viewTips := []models.TipsView{}
+	casts := []models.Casts{}
+	viewCasts := []models.CastsView{}
 
-	db.C("casts").Find(nil).Limit(pers).Skip(pager.Offset()).All(&tips)
+	db.C("casts").Find(nil).Limit(pers).Skip(pager.Offset()).All(&casts)
 
-	for _, t := range tips {
-		viewTips = append(viewTips, models.TipsView{Id: t.Id.Hex(), Content: t.Content, Comment: t.Comment})
+	for _, t := range casts {
+		viewCasts = append(viewCasts,
+			models.CastsView{Id: t.Id.Hex(), Author: t.Author, AuthorUrl: t.AuthorUrl,
+				VisitCount: t.VisitCount, Title: t.Title, Intro: t.Intro, ShowNotes: t.ShowNotes, Url: t.Url, LogoUrl: t.LogoUrl})
 	}
 
 	r.HTML(200, "admin/casts_index", map[string]interface{}{
 		"IsCasts":   true,
-		"Tips":      viewTips,
+		"Casts":     viewCasts,
 		"Paginator": pager,
 		"Num":       num}, render.HTMLOptions{Layout: "admin/layout"})
 }
@@ -38,13 +40,14 @@ func AdminAddCastsPage(req *http.Request, r render.Render, db *mgo.Database) {
 
 func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
 	author := req.FormValue("author")
+	aurhot_url := req.FormValue("authorurl")
 	title := req.FormValue("title")
 	intro := req.FormValue("intro")
 	show_notes := req.FormValue("shownotes")
 	url := req.FormValue("url")
 	logo_url := req.FormValue("logourl")
 
-	cast := models.Casts{Id: bson.NewObjectId(), Author: author,
+	cast := models.Casts{Id: bson.NewObjectId(), Author: author, AuthorUrl: aurhot_url,
 		VisitCount: 0, Title: title, Intro: intro, ShowNotes: show_notes, Url: url, LogoUrl: logo_url}
 	db.C("casts").Insert(cast)
 
