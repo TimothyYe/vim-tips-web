@@ -58,7 +58,7 @@
 
       {{ end }}
 
-      <button type="submit" class="btn btn-success">新增</button>
+      <button type="submit" class="btn btn-success">更新</button>
     </form>
   </div>
 </div>
