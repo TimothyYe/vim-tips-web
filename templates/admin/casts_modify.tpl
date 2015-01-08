@@ -52,7 +52,7 @@
       <div class="form-group">
         <div class="col-md-12">
           <label for="shownotes">相关资料</label>
-          <textarea class="form-control" id="shownotes" name="shownotes" rows="6">{{ .ShowNotes}}</textarea>
+          <textarea class="form-control" id="shownotes" name="shownotes" rows="6">{{ .ShowNotes }}</textarea>
         </div>
       </div>
 
