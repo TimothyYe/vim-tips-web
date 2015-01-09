@@ -5,8 +5,11 @@
       <h3>更新播客</h3>
     </div>
 
-    {{ with .Cast }}
+    
     <form class="form-horizontal" role="form" method="post" action="/admin/casts">
+      <input type="hidden" name="Id" value="{{ .Id }}">
+      
+      {{ with .Cast }}
       <div class="form-group">
         <div class="col-md-12">
           <label for="author">作者</label>
@@ -55,7 +58,6 @@
           <textarea class="form-control" id="shownotes" name="shownotes" rows="6">{{ .ShowNotes }}</textarea>
         </div>
       </div>
-
       {{ end }}
 
       <button type="submit" class="btn btn-success">更新</button>

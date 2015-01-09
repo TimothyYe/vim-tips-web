@@ -66,3 +66,7 @@ func AdminModifyCasts(r render.Render, db *mgo.Database, params martini.Params) 
 		"Id":      params["Id"],
 		"Cast":    cast}, render.HTMLOptions{Layout: "admin/layout"})
 }
+
+func AdminUpdateCasts(r render.Render, db *mgo.Database, params martini.Params) {
+
+}
