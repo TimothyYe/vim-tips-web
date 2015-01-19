@@ -1,6 +1,6 @@
   <div class="row m-t-xl">
   
-  <div class="col-md-8 col-md-offset-2" >
+  <div id="casts_add" class="col-md-8 col-md-offset-2" >
     <div class="m-t-l m-b-xl">
       <h3>新增播客</h3>
     </div>
