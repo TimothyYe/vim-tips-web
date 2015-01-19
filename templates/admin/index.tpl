@@ -18,7 +18,7 @@
 			<i class="fa fa-camera fa-stack-1x text-white"></i> 
 		</span> 
 		<a class="clear" href="/admin/casts"> 
-			<span class="h3 block m-t-xs"><strong>1</strong></span> 
+			<span class="h3 block m-t-xs"><strong>{{ .CastsCount }}</strong></span> 
 			<small class="text-muted text-uc">Casts</small> 
 		</a> 
 	</div>

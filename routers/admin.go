@@ -67,7 +67,14 @@ func HandleAdminIndex(r render.Render, db *mgo.Database) {
 		tips_count = 0
 	}
 
+	casts_count, err := db.C("casts").Count()
+
+	if err != nil {
+		casts_count = 0
+	}
+
 	r.HTML(200, "admin/index", map[string]interface{}{
-		"IsIndex":   true,
-		"TipsCount": tips_count}, render.HTMLOptions{Layout: "admin/layout"})
+		"IsIndex":    true,
+		"TipsCount":  tips_count,
+		"CastsCount": casts_count}, render.HTMLOptions{Layout: "admin/layout"})
 }
