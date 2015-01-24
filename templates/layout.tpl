@@ -28,6 +28,10 @@
   <link rel="stylesheet" type="text/css" href="/css/tools.css">
   {{ end }}
 
+  {{ if .Casts }}
+  <link rel="stylesheet" type="text/css" href="/css/tools.css">
+  {{ end }}
+
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
