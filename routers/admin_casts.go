@@ -41,14 +41,14 @@ func AdminAddCastsPage(r render.Render, db *mgo.Database) {
 
 func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
 	author := req.FormValue("author")
-	aurhot_url := req.FormValue("authorurl")
+	aurhor_url := req.FormValue("authorurl")
 	title := req.FormValue("title")
 	intro := req.FormValue("intro")
 	show_notes := req.FormValue("shownotes")
 	url := req.FormValue("url")
 	logo_url := req.FormValue("logourl")
 
-	cast := models.Casts{Id: bson.NewObjectId(), Author: author, AuthorUrl: aurhot_url,
+	cast := models.Casts{Id: bson.NewObjectId(), Author: author, AuthorUrl: aurhor_url,
 		VisitCount: 0, Title: title, Intro: intro, ShowNotes: show_notes, Url: url, LogoUrl: logo_url}
 	db.C("casts").Insert(cast)
 
@@ -67,6 +67,23 @@ func AdminModifyCasts(r render.Render, db *mgo.Database, params martini.Params) 
 		"Cast":    cast}, render.HTMLOptions{Layout: "admin/layout"})
 }
 
-func AdminUpdateCasts(r render.Render, db *mgo.Database, params martini.Params) {
+func AdminUpdateCasts(r render.Render, db *mgo.Database, req *http.Request) {
+	author := req.FormValue("author")
+	author_url := req.FormValue("authorurl")
+	title := req.FormValue("title")
+	intro := req.FormValue("intro")
+	show_notes := req.FormValue("shownotes")
+	url := req.FormValue("url")
+	logo_url := req.FormValue("logourl")
 
+	db.C("casts").UpdateId(bson.ObjectIdHex(req.FormValue("id")),
+		bson.M{"$set": bson.M{"author": author,
+			"authorurl": author_url,
+			"title":     title,
+			"intro":     intro,
+			"shownotes": show_notes,
+			"url":       url,
+			"logourl":   logo_url}})
+
+	r.Redirect("/admin/casts")
 }

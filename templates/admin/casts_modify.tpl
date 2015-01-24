@@ -6,8 +6,8 @@
     </div>
 
     
-    <form class="form-horizontal" role="form" method="post" action="/admin/casts">
-      <input type="hidden" name="Id" value="{{ .Id }}">
+    <form class="form-horizontal" role="form" method="post" action="/admin/casts/modify">
+      <input type="hidden" name="id" value="{{ .Id }}">
       
       {{ with .Cast }}
       <div class="form-group">
