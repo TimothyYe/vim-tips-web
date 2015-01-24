@@ -1,6 +1,6 @@
   <div class="row m-t-xl">
   
-  <div class="col-md-8 col-md-offset-2" >
+  <div id="casts_form" class="col-md-8 col-md-offset-2" >
     <div class="m-t-l m-b-xl">
       <h3>更新播客</h3>
     </div>
