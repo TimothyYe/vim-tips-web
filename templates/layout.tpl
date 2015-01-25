@@ -29,7 +29,7 @@
   {{ end }}
 
   {{ if .Casts }}
-  <link rel="stylesheet" type="text/css" href="/css/tools.css">
+  <link rel="stylesheet" type="text/css" href="/css/casts.css">
   {{ end }}
 
   <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>

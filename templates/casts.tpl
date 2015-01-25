@@ -1,33 +1,46 @@
 <div class="row" id="tools-container">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-12">
 <ul class="catCardList">
+{{ if .Num }}
+{{ range .Casts }}
 <li class="catCardList">
-<div class="catCard"><a href="#"><img src="/img/Vim.jpg" alt=""></a>
+<div class="catCard"><a href="{{ .Url }}" target="_blank"><img src="{{ .LogoUrl }}" alt=""></a>
 <div class="lowerCatCard">
-<h3>Vim插件</h3>
-<p>Vim的tips插件，通过:VimTips命令，随机显示一条vim tips。推荐在Ruby环境的系统中使用。</p>
-<div id="catCardButton" class="button"><a href="https://github.com/TimothyYe/vim-tips" target="_blank">点击查看</a></div>
+<h3>{{ .Title }}</h3>
+<p>{{ .Intro }}</p>
+<div id="catCardButton" class="button"><a href="{{ .Url }}" target="_blank">点击查看</a></div>
 </div>
 </div>
 </li>
-<li class="catCardList">
-<div class="catCard"><a href="#"><img src="/img/Alfred.jpg" width="220" height="200" alt=""></a>
-<div class="lowerCatCard">
-<h3>Alfred插件</h3>
-<p>Vim-tips.com的Alfred插件，使用命令vimtips s，获得一条随机的vim tips，回车可直接跳转到vim-tips.com进行查看。</p>
-<div id="catCardButton" class="button"><a href="https://github.com/TimothyYe/alfred2-vimtips-workflow" target="_blank">点击查看</a></div>
-</div>
-</div>
-</li>
-<li class="catCardList">
-<div class="catCard"><a href="#"><img src="/img/Swift.jpg" alt=""></a>
-<div class="lowerCatCard">
-<h3>iOS客户端</h3>
-<p>Vim-tips.com的iOS客户端，使用Swift语言开发，源码开源，供学习交流。</p>
-<div id="catCardButton" class="button"><a href="https://github.com/TimothyYe/DailyVimTips" target="_blank">点击查看</a></div>
-</div>
-</div>
-</li>
+{{ end }}
+{{ end }}
 </ul>
 </div>
 </div>
+
+	<div class="row">
+				<div class="m-b-xl">
+					{{if gt .Paginator.PageNums 1}}
+					<ul class="pagination pagination-sm">
+						{{if .Paginator.HasPrev}}
+						<li><a href="{{.Paginator.PageLinkFirst}}">第一页</a></li>
+						<li><a href="{{.Paginator.PageLinkPrev}}">&lt;</a></li>
+						{{else}}
+						<li class="disabled"><a>第一页</a></li>
+						<li class="disabled"><a>&lt;</a></li>
+						{{end}}
+						{{range $index, $page := .Paginator.Pages}}
+						<li{{if $.Paginator.IsActive .}} class="active"{{end}}>
+						<a href="{{$.Paginator.PageLink $page}}">{{$page}}</a>
+					</li>
+					{{end}}
+					{{if .Paginator.HasNext}}
+					<li><a href="{{.Paginator.PageLinkNext}}">&gt;</a></li>
+					<li><a href="{{.Paginator.PageLinkLast}}">最后一页</a></li>
+					{{else}}
+					<li class="disabled"><a>&gt;</a></li>
+					<li class="disabled"><a>最后一页</a></li>
+					{{end}}
+				</ul>
+				{{end}}
+			</div>

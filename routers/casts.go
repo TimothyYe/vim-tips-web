@@ -10,7 +10,7 @@ import (
 func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 	num, _ := db.C("casts").Count()
 
-	pers := 9
+	pers := 6
 	pager.Init(pers, num)
 
 	casts := []models.Casts{}

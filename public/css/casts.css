@@ -1,0 +1,115 @@
+/* Hover Card 
+.......................................................................*/
+div.catCard {
+    border: solid 5px #e9e9e9;
+    background: #d8d8d8;
+    width: 300px;
+    height: 340px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+div.lowerCatCard {
+  position: absolute; 
+  background: #e9e9e9;
+  padding: 5px 5px; 
+  height: 140px;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
+  transition:         all 0.6s ease;
+}
+div.lowerCatCard p {
+    font-size: 0.6em;
+    color: #774F38;
+    font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+div.lowerCatCard:hover {
+    opacity: 0.95;
+    bottom: 0;
+    height: 340px;
+}
+div.catCard  div.lowerCatCard { 
+    left: 0; 
+    bottom: -3%;
+    width: 295px;
+}
+div.catCard:hover div.lowerCatCard { 
+    bottom: 0;
+}
+li.catCardList {
+    width:305px;
+    display: inline-block;
+    margin-right: 19px;
+    margin-left: 19px;
+    margin-top: 25px;
+}
+li.catCardList-last {
+    margin-right: 0;
+    width:305px;
+    display: inline-block;
+}
+ul.catCardList {
+    margin: 0;
+}
+#catCardButton {
+    position: absolute;
+    width: 280px;
+    bottom: 5px;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition:    all 0.6s ease;
+    -o-transition:      all 0.6s ease;
+}
+div.lowerCatCard:hover #catCardButton {
+    bottom: 5px;
+}
+.catCard img {
+    border: 1px solid #dddddd;
+    width: 300px;
+    height: 195px;
+}
+.catCard img:hover {
+    border: 1px solid #bababa;
+}
+
+/* Button 
+.......................................................................*/
+.button {
+    cursor: pointer;
+    font-size: 14px !important;
+    color: #ffffff;
+    padding: 7px 10px !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0 !important;
+    background: #000;
+    border: none;
+    border-bottom: solid 1px #c90c12;
+    text-align: center;
+    margin-top: 10px;
+}
+.button:hover {
+    background-color: #c90c12;
+    border: none;
+    border-bottom: solid 1px #000;
+    box-shadow: 0 2px 3px #a8a8a8;
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+}
+.button:active {
+    background: #000;
+}
+.button a {
+    color: #ffffff;
+    padding: 7px 30px !important;
+    text-decoration: none;
+}
+.button a:hover {
+    color: #ffffff;
+}
+.button:hover {
+    color: #fff;
+}

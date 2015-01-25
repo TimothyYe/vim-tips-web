@@ -31,6 +31,27 @@
 									</span>
 								</div>
 							</td>
+
+							<div class="modal fade" id="myModal{{ .Id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title" id="myModalLabel">删除确认</h4>
+										</div>
+										<div class="modal-body">
+											请确认是否删除此条数据？
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+											<form class="col-md-3" role="form" method="post" action="/admin/casts/del">
+												<input type="hidden" value="{{ .Id }}" name="Id" />
+												<button type="submit" class="btn btn-danger" >确认删除</button>
+											</form>
+										</div>
+									</div><!-- /.modal-content -->
+								</div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 						</tr>
 						{{ end }}
 						{{ end }}
