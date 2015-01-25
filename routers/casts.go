@@ -2,9 +2,11 @@ package routers
 
 import (
 	"github.com/codegangsta/martini-contrib/render"
+	"github.com/go-martini/martini"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
+	"labix.org/v2/mgo/bson"
 )
 
 func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
@@ -38,8 +40,23 @@ func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 		"Num":       num})
 }
 
-func ShowCast(r render.Render) {
+func ShowCast(r render.Render, db *mgo.Database, params martini.Params) {
+
+	cast := models.Casts{}
+
+	db.C("casts").FindId(bson.ObjectIdHex(params["Id"])).One(&cast)
+
+	viewCast := models.CastsView{Id: cast.Id.Hex(),
+		Author:     cast.Author,
+		AuthorUrl:  cast.AuthorUrl,
+		VisitCount: cast.VisitCount,
+		Title:      cast.Title,
+		LogoUrl:    cast.LogoUrl,
+		Intro:      cast.Intro,
+		ShowNotes:  cast.ShowNotes,
+		Url:        cast.Url}
+
 	r.HTML(200, "show", map[string]interface{}{
-		"IsCasts": true,
-		"Id":      1})
+		"IsCasts":  true,
+		"ViewCast": viewCast})
 }

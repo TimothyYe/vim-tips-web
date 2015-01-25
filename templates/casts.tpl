@@ -4,11 +4,11 @@
 {{ if .Num }}
 {{ range .Casts }}
 <li class="catCardList">
-<div class="catCard"><a href="{{ .Url }}" target="_blank"><img src="{{ .LogoUrl }}" alt=""></a>
+<div class="catCard"><a href="/casts/{{ .Id }}" target="_blank"><img src="{{ .LogoUrl }}" alt=""></a>
 <div class="lowerCatCard">
 <h3>{{ .Title }}</h3>
 <p>{{ .Intro }}</p>
-<div id="catCardButton" class="button"><a href="{{ .Url }}" target="_blank">点击查看</a></div>
+<div id="catCardButton" class="button"><a href="/casts/{{ .Id }}" target="_blank">点击查看</a></div>
 </div>
 </div>
 </li>
