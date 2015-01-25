@@ -55,6 +55,13 @@ func AdminAddCasts(req *http.Request, r render.Render, db *mgo.Database) {
 	r.Redirect("/admin/casts")
 }
 
+func AdminDelCasts(req *http.Request, r render.Render, db *mgo.Database) {
+	id := req.FormValue("Id")
+	db.C("casts").RemoveId(bson.ObjectIdHex(id))
+
+	r.Redirect("/admin/casts")
+}
+
 func AdminModifyCasts(r render.Render, db *mgo.Database, params martini.Params) {
 
 	cast := models.Casts{}
