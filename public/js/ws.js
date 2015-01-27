@@ -5,7 +5,7 @@ $(document).ready(function(){
 function connectServer()
 {
 	var sock = null;
-	var wsuri = "ws://127.0.0.1:3001/ws";
+	var wsuri = "ws://vim-tips.com:3000/ws";
 
 	try
 	{
