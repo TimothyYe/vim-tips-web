@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 round" id="tip-content">
 		<img src="/img/lightbulb.png" class="light-bulb hidden-xs" alt=""/>
-		<a href="http://localhost:3000/tips/{{.Id}}">
+		<a href="http://vim-tips.com/tips/{{.Id}}">
 
 			<div class="tip-text">
 
