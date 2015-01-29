@@ -72,7 +72,7 @@
     <div id="copyright" class="container">
       <div class="row">
         <div class="col-md-12 col-xs-12">
-				<div class="col-md-6 col-xs-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a>.</div>
+				<div class="col-md-6 col-xs-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a> | <a href="/admin/login">管理入口</a></div>
         <div class="col-md-6 col-xs-6">
 					<div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
 				</div>
