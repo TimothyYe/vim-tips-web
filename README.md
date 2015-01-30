@@ -16,8 +16,6 @@ Now I re-designed this whole site and implement it by Go.
 
 ## Build it
 
-### Get & build it from source code
-
 * Get source code from Github:
 
 ```bash
