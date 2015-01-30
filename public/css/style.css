@@ -127,6 +127,11 @@
 	margin-top: 80px;
 }
 
+#show-notes {
+	background-color: #FFFFFF;
+	padding: 15px;
+}
+
 #comments{
 	margin-top: 60px;
 	margin-bottom: 100px;
