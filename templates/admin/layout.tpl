@@ -14,7 +14,7 @@
   <title>Vim-tips.com</title>
 
   <!-- Bootstrap core CSS -->
-<!--   <link href="http://fonts.useso.com/css?family=Lobster" rel="stylesheet" type="text/css"/> -->
+  <!--   <link href="http://fonts.useso.com/css?family=Lobster" rel="stylesheet" type="text/css"/> -->
   <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/admin.css" rel="stylesheet">
   <link href="/css/font-awesome-4.2.0/css/font-awesome.css" rel="stylesheet">
@@ -27,12 +27,13 @@
   <!--   <link href="theme.css" rel="stylesheet"> -->
   <style>
   body {
-    font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   }
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {
-    font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
+    font-family:Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   }
+
   </style>
 </head>
 
@@ -72,14 +73,14 @@
     <div id="copyright" class="container">
       <div class="row">
         <div class="col-md-12 col-xs-12">
-				<div class="col-md-6 col-xs-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a> | <a href="/admin/login">管理入口</a></div>
-        <div class="col-md-6 col-xs-6">
-					<div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
-				</div>
-				</div>
-      </div>
-    </div>
-  </div>
+          <div class="col-md-6 col-xs-6">Powered by Golang &amp; <a href="http://martini.codegangsta.io/" target="_blank" >Martini</a> | <a href="/admin/login">管理入口</a></div>
+          <div class="col-md-6 col-xs-6">
+           <div class="pull-right">© 2014 <a href="http://github.com/timothyye"> timothyye </a> All Rights Reserved.</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 
 </body>
