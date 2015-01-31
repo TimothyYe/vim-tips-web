@@ -5,7 +5,7 @@
 		{{ with .ViewCast }}
 		<div class="col-md-8 col-md-offset-2" id="api-json">
 
-			<div class="m-t m-b"><h4>{{ .Title }}     [作者: <a href="{{ .AuthorUrl }}" target="_blank">{{.Author}}</a>]</h4></div>
+			<div class="m-t m-b"><h4>{{ .Title }}     [主播: <a href="{{ .AuthorUrl }}" target="_blank">{{.Author}}</a>]</h4></div>
 
 			<video class="video-js vjs-default-skin" controls preload="auto" width="750" height="483" data-setup="{}">
 				<source src="{{ .Url }}" type='video/mp4'>
