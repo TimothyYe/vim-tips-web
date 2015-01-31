@@ -5,12 +5,12 @@
 		{{ with .ViewCast }}
 		<div class="col-md-8 col-md-offset-2" id="api-json">
 
-			<div class="m-t m-b"><h4>{{ .Title }}</h4></div>
+			<div class="m-t m-b"><h4>{{ .Title }}     [作者: <a href="{{ .AuthorUrl }}" target="_blank">{{.Author}}</a>]</h4></div>
 
 			<video class="video-js vjs-default-skin" controls preload="auto" width="750" height="483" data-setup="{}">
 				<source src="{{ .Url }}" type='video/mp4'>
 				</video>
-		
+
 				<ul id="mytab" class="nav nav-tabs m-t">
 					<li class="active"><a href="#intro" data-toggle="tab">介绍</a></li>
 					<li><a href="#resource" data-toggle="tab">相关资源</a></li>
