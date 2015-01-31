@@ -9,7 +9,7 @@
 						<tr>
 							<th>Title</th>
 							<th>Author</th>
-							<th>Intro</th>
+							<th>Author Url</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -18,7 +18,7 @@
 						<tr>
 							<td>{{ .Title }}</td>
 							<td>{{ .Author }}</td>
-							<td>{{ .Intro }}</td>
+							<td>{{ .AuthorUrl }}</td>
 
 							<td style="width:120px">
 								<div>

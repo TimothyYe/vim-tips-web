@@ -5,6 +5,7 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
+	"html/template"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )
@@ -28,8 +29,8 @@ func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 				VisitCount: t.VisitCount,
 				Title:      t.Title,
 				LogoUrl:    t.LogoUrl,
-				Intro:      t.Intro,
-				ShowNotes:  t.ShowNotes,
+				Intro:      template.HTML(t.Intro),
+				ShowNotes:  template.HTML(t.ShowNotes),
 				Url:        t.Url})
 	}
 
@@ -52,8 +53,8 @@ func ShowCast(r render.Render, db *mgo.Database, params martini.Params) {
 		VisitCount: cast.VisitCount,
 		Title:      cast.Title,
 		LogoUrl:    cast.LogoUrl,
-		Intro:      cast.Intro,
-		ShowNotes:  cast.ShowNotes,
+		Intro:      template.HTML(cast.Intro),
+		ShowNotes:  template.HTML(cast.ShowNotes),
 		Url:        cast.Url}
 
 	r.HTML(200, "show", map[string]interface{}{

@@ -5,6 +5,7 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
+	"html/template"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 	"net/http"
@@ -24,7 +25,7 @@ func AdminShowCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator
 	for _, t := range casts {
 		viewCasts = append(viewCasts,
 			models.CastsView{Id: t.Id.Hex(), Author: t.Author, AuthorUrl: t.AuthorUrl,
-				VisitCount: t.VisitCount, Title: t.Title, Intro: t.Intro, ShowNotes: t.ShowNotes, Url: t.Url, LogoUrl: t.LogoUrl})
+				VisitCount: t.VisitCount, Title: t.Title, Intro: template.HTML(t.Intro), ShowNotes: template.HTML(t.ShowNotes), Url: t.Url, LogoUrl: t.LogoUrl})
 	}
 
 	r.HTML(200, "admin/casts_index", map[string]interface{}{

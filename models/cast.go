@@ -1,6 +1,7 @@
 package models
 
 import (
+	"html/template"
 	"labix.org/v2/mgo/bson"
 )
 
@@ -23,7 +24,7 @@ type CastsView struct {
 	VisitCount int
 	Title      string
 	LogoUrl    string
-	Intro      string
-	ShowNotes  string
+	Intro      template.HTML
+	ShowNotes  template.HTML
 	Url        string
 }
