@@ -18,10 +18,11 @@ Now I re-designed this whole site and implement it by Go.
 
 Download sample DB from: [https://github.com/TimothyYe/vim-tips-web/tree/master/db](https://github.com/TimothyYe/vim-tips-web/tree/master/db)
 
-## Restore it to MongoDb
+## Restore it to MongoDB
 
 * Unzip the database, the DB directory is: vim_tips
 * Restore it to MongoDB
+* The default username & password to logon admin panel is: admin@vim-tips.com / 111
 
 ```bash
 mongorestore -h localhost -u user -p pass -d vim_tips ./vim_tips
