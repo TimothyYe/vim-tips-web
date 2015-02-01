@@ -57,4 +57,5 @@ nohup ./vim-tips-web &
 
 Use default username & password to logon admin panel:
 
-Username is:admin@vim-tips.com   Password is:111
+* Username is:admin@vim-tips.com
+* Password is:111
