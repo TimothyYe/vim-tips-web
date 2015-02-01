@@ -26,6 +26,7 @@ Download sample DB from: [https://github.com/TimothyYe/vim-tips-web/tree/master/
 Use default username & password to logon admin panel:
 
 Username is:admin@vim-tips.com
+
 Password is:111
 
 ```bash
