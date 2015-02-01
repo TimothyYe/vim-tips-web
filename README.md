@@ -14,9 +14,9 @@ Now I re-designed this whole site and implement it by Go.
 * Go environment is needed. 
 * MongoDB is installed.
 
-## Download the sample database from:
+## Download the sample database
 
-[https://github.com/TimothyYe/vim-tips-web/tree/master/db](https://github.com/TimothyYe/vim-tips-web/tree/master/db)
+Download sample DB from: [https://github.com/TimothyYe/vim-tips-web/tree/master/db](https://github.com/TimothyYe/vim-tips-web/tree/master/db)
 
 ## Restore it to MongoDb
 
