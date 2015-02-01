@@ -22,7 +22,11 @@ Download sample DB from: [https://github.com/TimothyYe/vim-tips-web/tree/master/
 
 * Unzip the database, the DB directory is: vim_tips
 * Restore it to MongoDB
-* The default username & password to logon admin panel is: admin@vim-tips.com / 111
+
+Use default username & password to logon admin panel:
+
+Username is:admin@vim-tips.com
+Password is:111
 
 ```bash
 mongorestore -h localhost -u user -p pass -d vim_tips ./vim_tips
