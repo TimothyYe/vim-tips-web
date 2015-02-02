@@ -51,7 +51,7 @@ go build
 nohup ./vim-tips-web &
 ```
 
-* Now, visit [http://localhost:3000](http://localhost:3000) to visit the site.
+* Now, type [http://localhost:3000](http://localhost:3000) in web browser to visit the site.
 
 ## Default username and password for admin panel
 
