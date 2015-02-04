@@ -24,7 +24,3 @@ func main() {
 		fmt.Println(err)
 	}
 }
-
-func ShowMessage(mess string) {
-	fmt.Println(mess)
-}
