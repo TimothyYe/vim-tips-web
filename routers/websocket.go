@@ -31,7 +31,6 @@ func sendAll(msg []byte) {
 	for conn := range connections {
 		if err := conn.WriteMessage(websocket.TextMessage, msg); err != nil {
 			delete(connections, conn)
-			return
 		}
 	}
 }
