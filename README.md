@@ -7,7 +7,7 @@ vim-tips-web
 
 The first version of [Vim-Tips.com](https://vim-tips.com) is written by Rails.
 
-Now I re-designed this whole site and implement it by Go.
+Now I re-designed this whole site and implemented it by Go.
 
 ## Prerequisite
 

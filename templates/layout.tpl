@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="Vim,Vimer,Vim技巧,Vim教程,Vim学习,Vim编辑器" name="keywords" />
+  <meta content="vim-tips,Vim,tips,Vimer,Vim技巧,Vim教程,Vim学习,Vim编辑器" name="keywords" />
   <meta content="Vim tips,Vimer的园地,来自Vim的每日技巧与点滴,让你每天都能学到来自Vim的奇淫技巧,让你的Vim更进一步..."name="description" />
   <title>VimTips - Daily tips for Vim!</title>
   <meta charset="utf-8">
