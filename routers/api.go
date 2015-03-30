@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/timothyye/vim-tips-web/models"
 	"labix.org/v2/mgo"
@@ -15,12 +16,14 @@ func HandleAPI(db *mgo.Database, r render.Render) {
 	err := db.C("apis").Find(bson.M{"type": "txt"}).One(&txt_api)
 
 	if err != nil {
+		r.HTML(200, "500", nil)
 		return
 	}
 
 	err = db.C("apis").Find(bson.M{"type": "json"}).One(&json_api)
 
 	if err != nil {
+		r.HTML(200, "500", nil)
 		return
 	}
 

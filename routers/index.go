@@ -10,13 +10,19 @@ import (
 )
 
 func getRandomIndex(total int) int {
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	return r.Intn(total)
+	rand.Seed(time.Now().UTC().UnixNano())
+	return rand.Intn(total)
 }
 
 func HandleIndex(r render.Render, db *mgo.Database) {
 	tip := models.Tips{}
-	total, _ := db.C("tips").Count()
+	total, err := db.C("tips").Count()
+
+	if err != nil || total == 0 {
+		r.HTML(200, "500", nil)
+		return
+	}
+
 	index := getRandomIndex(total)
 
 	if index == total {
