@@ -2,13 +2,23 @@ package routers
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/sessions"
 	"github.com/timothyye/martini-paginate"
 	"labix.org/v2/mgo"
-	"net/http"
 )
+
+func GetDBInstance() *mgo.Database {
+	session, err := mgo.Dial("mongodb://localhost")
+	if err != nil {
+		fmt.Println("Failed to connect to mongo DB...")
+	}
+
+	return session.DB("vim_tips")
+}
 
 func InitDB() martini.Handler {
 	session, err := mgo.Dial("mongodb://localhost")

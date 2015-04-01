@@ -5,11 +5,11 @@ import (
 
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/timothyye/vim-tips-web/models"
-	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )
 
-func HandleAPI(db *mgo.Database, r render.Render) {
+func HandleAPI(r render.Render) {
+	db := GetDBInstance()
 	txt_api := models.API{}
 	json_api := models.API{}
 
@@ -31,9 +31,14 @@ func HandleAPI(db *mgo.Database, r render.Render) {
 		"IsAPI":       true,
 		"TxtCounter":  txt_api.Count,
 		"JsonCounter": json_api.Count})
+
+	if db.Session != nil {
+		defer db.Session.Close()
+	}
 }
 
-func HandleRandomTxtTip(db *mgo.Database) string {
+func HandleRandomTxtTip() string {
+	db := GetDBInstance()
 	tip := models.Tips{}
 	api := models.API{}
 	total, _ := db.C("tips").Count()
@@ -55,10 +60,16 @@ func HandleRandomTxtTip(db *mgo.Database) string {
 		sendAll(data)
 	}
 
+	if db.Session != nil {
+		defer db.Session.Close()
+	}
+
 	return tip.Content + " " + tip.Comment
 }
 
-func HandleRandomJsonTip(db *mgo.Database, r render.Render) {
+func HandleRandomJsonTip(r render.Render) {
+
+	db := GetDBInstance()
 	tip := models.Tips{}
 	api := models.API{}
 	total, _ := db.C("tips").Count()
@@ -78,6 +89,10 @@ func HandleRandomJsonTip(db *mgo.Database, r render.Render) {
 
 	if err == nil {
 		sendAll(data)
+	}
+
+	if db.Session != nil {
+		defer db.Session.Close()
 	}
 
 	r.JSON(200, tip)

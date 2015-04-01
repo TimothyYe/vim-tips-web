@@ -1,16 +1,19 @@
 package routers
 
 import (
+	"html/template"
+
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/go-martini/martini"
 	"github.com/timothyye/martini-paginate"
 	"github.com/timothyye/vim-tips-web/models"
-	"html/template"
-	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )
 
-func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
+func HandleCasts(r render.Render, pager *paginate.Paginator) {
+
+	db := GetDBInstance()
+
 	num, _ := db.C("casts").Count()
 
 	pers := 6
@@ -34,6 +37,10 @@ func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 				Url:        t.Url})
 	}
 
+	if db.Session != nil {
+		defer db.Session.Close()
+	}
+
 	r.HTML(200, "casts", map[string]interface{}{
 		"IsCasts":   true,
 		"Casts":     viewCasts,
@@ -41,8 +48,8 @@ func HandleCasts(r render.Render, db *mgo.Database, pager *paginate.Paginator) {
 		"Num":       num})
 }
 
-func ShowCast(r render.Render, db *mgo.Database, params martini.Params) {
-
+func ShowCast(r render.Render, params martini.Params) {
+	db := GetDBInstance()
 	cast := models.Casts{}
 
 	db.C("casts").FindId(bson.ObjectIdHex(params["Id"])).One(&cast)
@@ -56,6 +63,10 @@ func ShowCast(r render.Render, db *mgo.Database, params martini.Params) {
 		Intro:      template.HTML(cast.Intro),
 		ShowNotes:  template.HTML(cast.ShowNotes),
 		Url:        cast.Url}
+
+	if db.Session != nil {
+		defer db.Session.Close()
+	}
 
 	r.HTML(200, "show", map[string]interface{}{
 		"IsCasts":  true,

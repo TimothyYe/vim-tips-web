@@ -6,7 +6,6 @@ import (
 
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/timothyye/vim-tips-web/models"
-	"labix.org/v2/mgo"
 )
 
 func getRandomIndex(total int) int {
@@ -14,8 +13,10 @@ func getRandomIndex(total int) int {
 	return rand.Intn(total)
 }
 
-func HandleIndex(r render.Render, db *mgo.Database) {
+func HandleIndex(r render.Render) {
 	tip := models.Tips{}
+
+	db := GetDBInstance()
 	total, err := db.C("tips").Count()
 
 	if err != nil || total == 0 {
@@ -30,6 +31,10 @@ func HandleIndex(r render.Render, db *mgo.Database) {
 	}
 
 	db.C("tips").Find(nil).Skip(index).One(&tip)
+
+	if db.Session != nil {
+		defer db.Session.Close()
+	}
 
 	r.HTML(200, "index", map[string]interface{}{
 		"Comment": tip.Comment,
