@@ -9,6 +9,18 @@ The first version of [Vim-Tips.com](https://vim-tips.com) is written by Rails.
 
 Now I re-designed this whole site and implemented it by Go.
 
+## Screenshots
+
+![](screenshots/1.png)
+
+![](screenshots/2.png)
+
+![](screenshots/3.png)
+
+![](screenshots/4.png)
+
+![](screenshots/5.png)
+
 ## Prerequisite
 
 * Go environment is needed. 
