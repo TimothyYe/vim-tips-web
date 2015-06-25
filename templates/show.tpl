@@ -21,7 +21,7 @@
 						{{ .Intro }}		
 					</div>
 					<div class="tab-pane" id="resource">
-						N/A
+						{{ .ShowNotes }}
 					</div>
 				</div>
 
