@@ -7,6 +7,7 @@ import (
 	"github.com/codegangsta/martini-contrib/render"
 	"github.com/martini-contrib/sessions"
 	"github.com/timothyye/vim-tips-web/models"
+	"golang.org/x/crypto/bcrypt"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )
@@ -50,8 +51,7 @@ func HandleLogin(req *http.Request, r render.Render, s sessions.Session, db *mgo
 		fmt.Println(err.Error())
 	}
 
-	//if username == "admin@vim-tips.com" && bcrypt.CompareHashAndPassword(id.Password, []byte(pass)) == nil {
-	if username == "admin@vim-tips.com" && pass == "111" {
+	if username == "admin@vim-tips.com" && bcrypt.CompareHashAndPassword(id.Password, []byte(pass)) == nil {
 		fmt.Println("Login success!")
 		s.Set("IsLogin", true)
 
